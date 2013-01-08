@@ -27,14 +27,15 @@
 		width: 180px;
 		text-align: center;
 		margin: 5px 10px 5px 10px;
-		padding: 5px;
+		padding: 15px;
 		text-decoration: none;
 		color: black;
 		font-weight: bold;
 	}
+    
 
     #excerpts{
-      padding: 10px 0px 0px;
+      padding: 10px 0px 1px;
     }
     #excerpts>h2{
       padding: 0px 10px;
@@ -51,6 +52,8 @@
       margin: 0px;
       line-height: 120%;
     }
+    /*.white and .gray are used in the alternating background display of posts.
+      If not alternating backgrounds, these should go away */
 	.white{
       padding: 5px 15px;
 		background-color: #FFFFFF;
@@ -72,13 +75,20 @@
       vertical-align: top;
       padding: 10px 0px;
     }
+    .excerpt_buttons{
+      margin: 10px 15px 25px;
+    }
+    .excerpt_buttons>.button{
+      display: block;
+      margin: 15px 0px;
+    }
     </style>
   </head>
   <body>
     <a href="http://forums.e-democracy.org/groups/mpls" style="text-decoration: none; color: black;"><h1>Minneapolis Issues Forum</h1></a>
     <p><img src="http://www.heart.org/idc/groups/heart-public/@wcm/@global/documents/image/ucm_300156.png"><img src="http://www.heart.org/idc/groups/heart-public/@wcm/@global/documents/image/ucm_300157.png"></p> 
     <div id="topics" class="container">
-      <h2> Today's Active Topics</h2>
+      <a name="topics_list"><h2> Today's Active Topics</h2></a>
       <div class="topic_listing">
         <h3>A topic title</h3>
         <p class="topic_buttons"><a href="#topic1" class="button">Read Clip</a> <a href="#" class="button">Read Online</a></p>
@@ -121,6 +131,7 @@
             </tr>
           </tbody>
         </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Return to Active Topics</a></div>
       </div>
       <div class="excerpt gray">
         <a name="topic2"><h3>A topic title</h3></a>
@@ -140,6 +151,7 @@
             </tr>
           </tbody>
         </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Return to Active Topics</a></div>
       </div>
       <p></p>
       <div class="excerpt">
@@ -162,6 +174,7 @@
             </tr>
           </tbody>
         </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Return to Active Topics</a></div>
       </div>
       <div class="excerpt">
         <div class="excerpt_metadata">
@@ -183,6 +196,7 @@
             </tr>
           </tbody>
         </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Return to Active Topics</a></div>
       </div>
     </div>
   </body>
