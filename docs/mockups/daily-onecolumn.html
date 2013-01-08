@@ -40,17 +40,23 @@
       padding: 0px 10px;
     }
     .excerpt{
-      padding: 5px 15px;
+      padding: 0px;
       margin: 0px;
     }
-    .excerpt>p{
+    .excerpt_metadata{
+      padding: 1px 15px;
+      background-color: #E1E1E1;
+    }
+    .excerpt>p,.excerpt_metadata>p{
       margin: 0px;
       line-height: 120%;
     }
 	.white{
+      padding: 5px 15px;
 		background-color: #FFFFFF;
 	}
     .gray{
+      padding: 5px 15px;
 	 	background-color: #E1E1E1;
 	}
 
@@ -96,11 +102,53 @@
     </div>
     <div id="excerpts" class="container">
       <h2>Topic Clips</h2>
+      
       <div class="excerpt white">
         <a name="topic1"><h3>A topic title</h3></a>
         <p>5 posts - 2 new since yesterday</p>
         <p>Keywords: stuff things whatever</p>
         <p>Latest Post at 5:00pm by Bill Bushey</p>
+        <table>
+          <tbody>
+            <tr>
+              <td class="poster_cell">
+                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
+                <p class="poster_name">Bill Bushey</p>
+              </td>
+              <td class="post_cell">
+                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="excerpt gray">
+        <a name="topic2"><h3>A topic title</h3></a>
+        <p>5 posts - 2 new since yesterday</p>
+        <p>Keywords: stuff things whatever</p>
+        <p>Latest Post at 5:00pm by Bill Bushey</p>
+        <table>
+          <tbody>
+            <tr>
+              <td class="poster_cell">
+                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
+                <p class="poster_name">Bill Bushey</p>
+              </td>
+              <td class="post_cell">
+                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p></p>
+      <div class="excerpt">
+        <div class="excerpt_metadata">
+          <a name="topic3"><h3>A topic title</h3></a>
+          <p>5 posts - 2 new since yesterday</p>
+          <p>Keywords: stuff things whatever</p>
+          <p>Latest Post at 5:00pm by Bill Bushey</p>
+        </div>
         <table>
           <tbody>
             <tr>
@@ -115,51 +163,13 @@
           </tbody>
         </table>
       </div>
-      <div class="excerpt gray">
-        <div class="metadata">
-          <a name="topic2"><h3>A topic title</h3></a>
+      <div class="excerpt">
+        <div class="excerpt_metadata">
+          <a name="topic4"><h3>A topic title</h3></a>
           <p>5 posts - 2 new since yesterday</p>
           <p>Keywords: stuff things whatever</p>
           <p>Latest Post at 5:00pm by Bill Bushey</p>
         </div>
-        <table>
-          <tbody>
-            <tr>
-              <td class="poster_cell">
-                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
-                <p class="poster_name">Bill Bushey</p>
-              </td>
-              <td class="post_cell">
-                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="excerpt white">
-        <a name="topic3"><h3>A topic title</h3></a>
-        <p>5 posts - 2 new since yesterday</p>
-        <p>Keywords: stuff things whatever</p>
-        <p>Latest Post at 5:00pm by Bill Bushey</p>
-        <table>
-          <tbody>
-            <tr>
-              <td class="poster_cell">
-                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
-                <p class="poster_name">Bill Bushey</p>
-              </td>
-              <td class="post_cell">
-                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="excerpt gray">
-        <a name="topic4"><h3>A topic title</h3></a>
-        <p>5 posts - 2 new since yesterday</p>
-        <p>Keywords: stuff things whatever</p>
-        <p>Latest Post at 5:00pm by Bill Bushey</p>
         <table>
           <tbody>
             <tr>
