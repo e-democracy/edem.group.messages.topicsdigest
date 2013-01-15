@@ -17,6 +17,7 @@
     }
     h1{
       font-size: 1.7em;
+      margin-bottom: 3px;
     }
     h2{
       font-size: 1.4em;
@@ -51,27 +52,25 @@
       padding: 0px 10px;
     }
     .excerpt{
-      padding: 0px;
+      padding: 2px 5px 5px;
       margin: 0px;
       border-top: 1px solid #003366;
       border-bottom: 1px solid #003366;
-    }
-    .excerpt_metadata{
-      padding: 1px 15px 15px;
-      background-color: #E1E1E1;
     }
     .excerpt>p,.excerpt_metadata>p{
       margin: 0px;
       line-height: 120%;
     }
+    .excerpt_metadata>p>a{
+      text-decoration: none;
+      color: black;
+    }
     /*.white and .gray are used in the alternating background display of posts.
       If not alternating backgrounds, these should go away */
-	.white{
-      padding: 5px 15px;
+	.odd{
 		background-color: #FFFFFF;
 	}
-    .gray{
-      padding: 5px 15px;
+    .even{
 	 	background-color: #E1E1E1;
 	}
 
@@ -88,14 +87,13 @@
       padding: 10px 0px;
     }
     .excerpt_buttons{
-      margin: 10px 15px 25px;
-    }
-    .excerpt_buttons>.button{
+      margin: 10px 0px 0px;
     }
     </style>
   </head>
   <body>
     <a href="http://forums.e-democracy.org/groups/mpls" style="text-decoration: none; color: black;"><h1>Minneapolis Issues Forum</h1></a>
+    <p style="margin: 0px 5px;">Connecting <strong>1234</strong> Members</p>
     <p><img style="vertical-align: top; margin: 0px 5px;" src="http://forums.e-democracy.org/groups/files/files/f/3163-2012-02-27T215522Z/facebookforum.jpg"><img style="vertical-align: top; margin: 0px 5px;" src="http://forums.e-democracy.org/groups/files/files/f/3162-2012-02-27T215520Z/twitterforum.png"></p> 
     <div id="topics" class="container">
       <a name="topics_list"><h2> Today's Active Topics</h2></a>
@@ -127,74 +125,11 @@
     <div id="excerpts" class="container">
       <h2>Topic Clips</h2>
       
-      <div class="excerpt white">
-        <a name="topic1"><h3>1 - A topic title</h3></a>
-        <p><strong>Posts</strong>: 2 New - 5 Total</p>
-        <p><strong>Keywords</strong>: stuff things whatever</p>
-        <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
-        <table>
-          <tbody>
-            <tr>
-              <td class="poster_cell">
-                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
-                <p class="poster_name">Bill Bushey</p>
-              </td>
-              <td class="post_cell">
-                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Go to Top</a></div>
-      </div>
-      <div class="excerpt gray">
-        <a name="topic2"><h3>2 - A topic title</h3></a>
-        <p><strong>Posts</strong>: 2 New - 5 Total</p>
-        <p><strong>Keywords</strong>: stuff things whatever</p>
-        <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
-        <table>
-          <tbody>
-            <tr>
-              <td class="poster_cell">
-                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
-                <p class="poster_name">Bill Bushey</p>
-              </td>
-              <td class="post_cell">
-                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Go to Top</a></div>
-      </div>
-      <p></p>
-      <div class="excerpt">
+      <div class="excerpt odd">
+        <a name="topic1"><h3>1) A topic title</h3></a>
         <div class="excerpt_metadata">
-          <a name="topic3"><h3>3 - A topic title</h3></a>
           <p><strong>Posts</strong>: 2 New - 5 Total</p>
-          <p><strong>Keywords</strong>: stuff things whatever</p>
-          <p><strong>Newest Post</strong>: 5:00pm by The Very Esteemed William Preston Bushey, Esq.</p>
-        </div>
-        <table>
-          <tbody>
-            <tr>
-              <td class="poster_cell">
-                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
-                <p class="poster_name">The Very Esteemed William Preston Bushey, Esq.</p>
-              </td>
-              <td class="post_cell">
-                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Go to Top</a></div>
-      </div>
-      <div class="excerpt">
-        <div class="excerpt_metadata">
-          <a name="topic4"><h3>4 - A topic title</h3></a>
-          <p><strong>Posts</strong>:  2 New - 5 Total</p>
-          <p><strong>Keywords</strong>: <a href="#">stuff</a> things whatever</p>
+          <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
           <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
         </div>
         <table>
@@ -202,7 +137,73 @@
             <tr>
               <td class="poster_cell">
                 <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
-                <p class="poster_name">Bill Bushey</p>
+                <!--<p class="poster_name">Bill Bushey</p>-->
+              </td>
+              <td class="post_cell">
+                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Go to Top</a></div>
+      </div>
+      <div class="excerpt even">
+        <a name="topic2"><h3>2) A topic title</h3></a>
+        <div class="excerpt_metadata">
+          <p><strong>Posts</strong>: 2 New - 5 Total</p>
+          <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+          <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td class="poster_cell">
+                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
+                <!--<p class="poster_name">Bill Bushey</p>-->
+              </td>
+              <td class="post_cell">
+                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Go to Top</a></div>
+      </div>
+      <div class="excerpt odd">
+        <a name="topic3"><h3>3) A topic title</h3></a>
+        <div class="excerpt_metadata">
+          <p><strong>Posts</strong>: 2 New - 5 Total</p>
+          <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+          <p><strong>Newest Post</strong>: 5:00pm by The Very Esteemed William Preston Bushey, Esq.</p>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td class="poster_cell">
+                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
+                <!--<p class="poster_name">The Very Esteemed William Preston Bushey, Esq.</p>-->
+              </td>
+              <td class="post_cell">
+                <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#topics_list" class="button">Go to Top</a></div>
+      </div>
+      <div class="excerpt even">
+        <a name="topic4"><h3>4) A topic title</h3></a>
+        <div class="excerpt_metadata">
+          <p><strong>Posts</strong>:  2 New - 5 Total</p>
+          <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+          <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td class="poster_cell">
+                <p><img src="http://forums.e-democracy.org/p/billbushey/photo"/></p>
+                <!--<p class="poster_name">Bill Bushey</p>-->
               </td>
               <td class="post_cell">
                 <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
