@@ -24,25 +24,43 @@
     h2{
       font-size: 1.4em;
     }
+    a{
+      text-decoration: none;
+    }
+    a:link{
+      color: #0645AD;
+    }
+    a:visited{
+      color: #663366;
+    }
+    a:hover{
+      font-weight:bold;
+    }
+    a:active{
+      font-weight:bold;
+    }
 	.container{
         background-color: #FFFFFF;
 		padding: 10px;
         margin: 10px 0px;
 	}
-	.button{
+	a:link.button{
         display: inline-block;
 		border: 1px #003366 solid;
-		border-radius: 5px;
+		border-radius: .3125em;
 		background-color: #D4ECF5;
 		max-width: 120px;
 		text-align: center;
-		margin: 5px 10px 5px 10px;
-		padding: 11px;
+		margin: .3125em .625em .3125em .625em;
+		padding: .6875em;
 		text-decoration: none;
 		color: black;
+        font-size: 1em;
 		font-weight: bold;
 	}
-
+    a:visited.button{
+      border-color: #003366;
+    }
     
     .topic_buttons{
     } 
@@ -64,8 +82,6 @@
       line-height: 120%;
     }
     .excerpt_metadata>p>a{
-      text-decoration: none;
-      color: black;
     }
     /*.white and .gray are used in the alternating background display of posts.
       If not alternating backgrounds, these should go away */
@@ -219,13 +235,13 @@
     <div id="help" style="border-top:medium solid #666666;">
       <p> Your received this email because you are a member of <span>Minneapolis Issues Forum</span> and you are set to receive a regular <em>digest</em> of topics.</p>
       <p>
-        <strong>Leave?</strong> <a href="mailto:mpls@forums.e-democracy.org?Subject=unsubscribe" style="color:black;">Email <code>mpls@forums.e-democracy.org</code></a> with the subject line <code>unsubscribe</code>.
+        <strong>Leave?</strong> <a href="mailto:mpls@forums.e-democracy.org?Subject=unsubscribe">Email <code>mpls@forums.e-democracy.org</code></a> with the subject line <code>unsubscribe</code>.
       </p>
       <p>
-        <strong>More email?</strong> <a style="color:black;" href="mailto:mpls@forums.e-democracy.org?Subject=digest%20off">Email <code>mpls@forums.e-democracy.org</code></a> with the subject line <code>digest off</code> to receive an email every time a member posts. 
+        <strong>More email?</strong> <a href="mailto:mpls@forums.e-democracy.org?Subject=digest%20off">Email <code>mpls@forums.e-democracy.org</code></a> with the subject line <code>digest off</code> to receive an email every time a member posts. 
       </p>
       <p>
-        <strong>Help!</strong> <a style="color:black;" href="mailto:support@e-democracy.org?Subject=Digest%20Issue">Email <code>support@e-democracy.org</code></a> if you have any problems.
+        <strong>Help!</strong> <a href="mailto:support@e-democracy.org?Subject=Digest%20Issue">Email <code>support@e-democracy.org</code></a> if you have any problems.
       </p>
     </div>
   </body>
