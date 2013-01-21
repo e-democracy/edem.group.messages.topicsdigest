@@ -73,13 +73,16 @@
     #excerpts>h2{
       padding: 0px 10px;
     }
-    .excerpt{
+    .excerpt, .excerpt_table{
       padding: 2px 5px 5px;
       margin: 0px;
       border-top: 1px solid #003366;
       border-bottom: 1px solid #003366;
     }
-    .excerpt>p,.excerpt_metadata>p{
+    .excerpt_table{
+        width: 100%
+    }
+    .excerpt>p,.excerpt_metadata>p, .excerpt_metadata>td>p{
       margin: 0px;
       line-height: 120%;
     }
@@ -218,21 +221,31 @@
         </table>
         <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#listing3" class="button">Go to Top</a></div>
       </div>
-      <div class="excerpt even">
-        <a name="topic4"><h3>4) A topic title</h3></a>
-        <div class="excerpt_metadata">
-          <p><strong>Posts</strong>:  2 New - 5 Total</p>
-          <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
-          <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
-        </div>
-        <table>
-          <tr><td class="excerpt_body">
+      <table class="excerpt_table even">
+        <tr>
+          <td>
+            <a name="topic4"><h3>4) A topic title</h3></a>
+          </td>
+        </tr>
+        <tr class="excerpt_metadata">
+          <td>
+            <p><strong>Posts</strong>:  2 New - 5 Total</p>
+            <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+            <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="excerpt_body">
             <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/>
             <p>This is some stuff.</p> 
-          </td></tr>
-        </table>
-        <div class="excerpt_buttons"><a href="#" class="button">Read Online</a> <a href="#listing4" class="button">Go to Top</a></div>
-      </div>
+          </tr>
+        </tr>
+        <tr class="excerpt_buttons">
+          <td>
+            <a href="#" class="button">Read Online</a> <a href="#listing4" class="button">Go to Top</a>
+          </td>
+        </tr>
+      </table>
     </div>
     <div id="help" style="border-top:medium solid #666666;">
       <p> Your received this email because you are a member of <span>Minneapolis Issues Forum</span> and you are set to receive a regular <em>digest</em> of topics.</p>
