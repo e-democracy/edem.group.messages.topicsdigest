@@ -6,120 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Daily Digest: Minneapolis Issues Forum: E-Democracy</title>
     <style>
-    body{
-      font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif;
-      line-height: 150%;
-      background-color:#D4ECF5;
-      margin: 0px;
-      padding: 5px;
-      color: black;
-    }
-    h1,h2,h3,h4,h5,h6{
-      line-height: 150%;
-      margin: 10px 0px;
-    }
-    h1{
-      font-size: 1.7em;
-      margin-bottom: 3px;
-    }
-    h2{
-      font-size: 1.4em;
-    }
-    a{
-      text-decoration: none;
-    }
-    a:link{
-      color: #0645AD;
-    }
-    a:visited{
-      color: #663366;
-    }
-    a:hover{
-      font-weight:bold;
-    }
-    a:active{
-      font-weight:bold;
-    }
-	.container{
-        background-color: #FFFFFF;
-		padding: 7px;
-        margin: 5px 0px;
-	}
-	a:link.button{
-        display: inline-block;
-		border: 1px #003366 solid;
-		border-radius: .3125em;
-		background-color: #D4ECF5;
-		max-width: 120px;
-		text-align: center;
-		margin: 3px 6px;
-		padding: .6875em;
-		text-decoration: none;
-		color: black;
-        font-size: 1em;
-		font-weight: bold;
-	}
-    a:visited.button{
-      border-color: #003366;
-      color: #663366;
-    }
+        /* Alot of email clients do not handle body background colors. Using a table 
+           that contains the entire email to get around that.*/
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        td.body{
+            font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif;
+            line-height: 150%;
+            background-color:#D4ECF5;
+            margin: 0px;
+            padding: 5px;
+            color: black;
+            width: 100%
+        }
+
+        /***
+         * Headers 
+         ***/
+        h1,h2,h3,h4,h5,h6{
+            line-height: 150%;
+            margin: 10px 0px;
+        }
+
+        h1{
+            font-size: 1.7em;
+            margin-bottom: 3px;
+        }
+
+        h2{
+            font-size: 1.4em;
+        }
+        
+        /***
+         * Links & Buttons
+         ***/
+        a{
+            text-decoration: none;
+        }
+
+        a:link{
+            color: #0645AD;
+        }
+
+        a:visited{
+            color: #663366;
+        }
+
+        a:hover{
+            font-weight:bold;
+        }
+
+        a:active{
+            font-weight:bold;
+        }
+
+        a:link.button{
+            display: inline-block;
+		    border: 1px #003366 solid;
+		    border-radius: .3125em;
+		    background-color: #D4ECF5;
+		    max-width: 120px;
+		    text-align: center;
+		    margin: 1px 5px;
+		    padding: .6875em;
+		    text-decoration: none;
+		    color: black;
+            font-size: 1em;
+		    font-weight: bold;
+	    }
+
+        a:visited.button{
+            border-color: #003366;
+            color: #663366;
+        }
+
     
-    .topic_buttons{
-    } 
+        /***
+         * General Sections 
+         ***/
+	    .section{
+            background-color: #FFFFFF;
+		    padding: 7px;
+            margin: 5px 0px;
+	    }
+	
+        /*** 
+         * Excerpts 
+         ***/
+        #excerpts{
+            padding: 10px 0px 1px;
+        }
 
-    #excerpts{
-      padding: 10px 0px 1px;
-    }
-    #excerpts>h2{
-      padding: 0px 10px;
-    }
-    .excerpt_table{
-      padding: 2px 5px 5px;
-      margin: 0px;
-      border-top: 1px solid #003366;
-      border-bottom: 1px solid #003366;
-        width: 100%
-    }
-    .excerpt>p,.excerpt_metadata>p {
-      margin: 0px;
-      line-height: 120%;
-    }
-    .excerpt_metadata>p>a{
-    }
-    .excerpt_body>img{
-        margin: 5px;
-    }
+        #excerpts>h2{
+            padding: 0px 10px;
+        }
 
-    /* Alternating backgrounds of post clips */
-	.odd{
-		background-color: #FFFFFF;
-	}
-    .even{
-	 	background-color: #E1E1E1;
-	}
+        .excerpt_table{
+            padding: 2px 3px 5px;
+            margin: 0px;
+            border-top: 1px solid #003366;
+            border-bottom: 1px solid #003366;
+            width: 100%
+        }
 
-    .poster_cell{
-      vertical-align: top;
-      width: 100px;
-      text-align: center;
-    }
-    .poster_name{
-      line-height: 120%;
-    }
-    .post_cell{
-      vertical-align: top;
-      padding: 10px 0px;
-    }
-    .excerpt_buttons{
-      margin: 10px 0px 0px;
-    }
+        .excerpt_metadata>p {
+            margin: 0px;
+            line-height: 120%;
+        }
+
+        .excerpt_body{
+            padding: 15px 0px 10px;
+        }
+        
+        .excerpt_body>p{
+            margin: 0px;
+        }
+
+        .excerpt_body>img{
+            margin: 0.3em 15px 5px 5px;
+        }
+
+        /* Alternating backgrounds of post clips */
+	    .odd{
+		    background-color: #FFFFFF;
+	    }
+        .even{
+	 	    background-color: #E1E1E1;
+	    }
+
+        .excerpt_buttons{
+            margin: 10px 0px 0px;
+        }
     </style>
   </head>
-  <body>
+  <body><table><tr><td class="body">
     <a href="http://forums.e-democracy.org/groups/mpls" style="text-decoration: none; color: black;"><h1>Minneapolis Issues Forum</h1></a>
     <p style="margin: 0px 5px;">Connecting <strong>1234</strong> Members</p>
     <p><img style="vertical-align: top; margin: 0px 5px;" src="http://forums.e-democracy.org/groups/files/files/f/3163-2012-02-27T215522Z/facebookforum.jpg"><img style="vertical-align: top; margin: 0px 5px;" src="http://forums.e-democracy.org/groups/files/files/f/3162-2012-02-27T215520Z/twitterforum.png"></p> 
-    <div id="topics" class="container">
+    <div id="topics" class="section">
       <a name="topics_list"><h2> Today's Active Topics</h2></a>
       <div class="topic_listing">
         <a name="listing1"></a>
@@ -146,11 +172,11 @@
         <p style="margin-left: 11px;">To start a new topic, email <a href="mailto:mpls@forums.e-democracy.org">mpls@forums.e-democracy.org</a>. Be sure to include a subject.</p>
       </div>
     </div>
-    <div id="e-dem_teaser" class="container">
+    <div id="e-dem_teaser" class="section">
       <h2>E-Democracy News</h2>
       <p>This section of the digest will be used to highlight news about E-Democracy, news that the staff of E-Democracy feels is important for users to know, or anything that the staff feels is important for users to know.</p>
     </div>
-    <div id="excerpts" class="container">
+    <div id="excerpts" class="section">
       <h2>Topic Clips</h2>
       
       <table class="excerpt_table odd">
@@ -207,7 +233,7 @@
           </tr>
         </tbody>
       </table>
-      <table class="excerpt odd">
+      <table class="excerpt_table odd">
         <tbody>
           <tr>
             <td>
@@ -223,7 +249,7 @@
           </tr>
           <tr>
             <td class="excerpt_body">
-              <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/></p>
+              <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/>
               <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
             </td>
           </tr>
@@ -274,5 +300,5 @@
         <strong>Help!</strong> <a href="mailto:support@e-democracy.org?Subject=Digest%20Issue">Email <code>support@e-democracy.org</code></a> if you have any problems.
       </p>
     </div>
-  </body>
+  </td></tr></table></body>
 </html>
