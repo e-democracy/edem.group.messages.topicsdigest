@@ -3,6 +3,8 @@ edem.group.messages.topicsdigest
 
 E-Democracy Customization of GroupServer's Topics Digest
 
+The styling borrows a little bit from https://github.com/mailchimp/Email-Blueprints/blob/master/templates/mobile-basicmobile.html. Thanks Mail Chimp! 
+
 Workflow
 ========
 
