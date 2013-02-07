@@ -192,6 +192,37 @@
         .poster_cell>p{
             margin: 2px 0px;
         }
+
+        /***
+         * Desktop Version
+         ***/
+        @media screen and (min-width: 640px) {
+            .excerpt_metadata{
+                display: table;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .excerpt_metadata>p{
+                display: table-cell;
+                width: 33%;
+                vertical-align: middle;
+                text-align: center;
+                padding: 0px 5px;
+                margin: 0px;
+            }
+
+            .excerpt_buttons{
+                display: table-cell;
+                min-width: 250px;
+                vertical-align: middle;
+                text-align: center;
+                padding: 0px 5px;
+                margin: 0px;
+            }
+
+        }
     </style>
   </head>
   <body>
