@@ -1,17 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Daily Digest: Minneapolis Issues Forum: E-Democracy</title>
     <style>
-        /* Alot of email clients do not handle body background colors. Using a table 
-           that contains the entire email to get around that.*/
-        body{
-            margin: 0px;
-            padding: 0px;
-        }
+        /* Borrowing some styling from Mail Chimp: https://github.com/mailchimp/Email-Blueprints/blob/master/templates/mobile-basicmobile.html*/
+        /***
+         * Client-specific Styles 
+         ***/
+        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+        body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+        body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
+
+        /***
+         * General body styling
+         ***/
+        /* Reset Styles */
+        body{margin:0; padding:0;}
+        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+        table td{border-collapse:collapse;}
+
+        /* Alot of email clients do not handle body background colors. Using a table that contains the entire email to get around that.*/
         td.body{
             font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif;
             line-height: 150%;
@@ -19,7 +31,8 @@
             margin: 0px;
             padding: 5px;
             color: black;
-            width: 100%
+            height: 100% !important;
+            width: 100% !important;
         }
 
         /***
@@ -33,6 +46,10 @@
         h3>a:link, h3>a:visited, h3>a:hover{
             color: black;
             font-weight: normal;
+        }
+        .header_link{
+            text-decoration: none; 
+            color: black;
         }
 
         /* h1 is used for the digest title, which is important, but not as visually important as topic titles  */
@@ -95,6 +112,14 @@
             color: #663366;
         }
 
+        /***
+         * Social Media Icons
+         ***/
+        .social_media_icon{
+            vertical-align: middle;
+            margin: 0px 5px;
+        }
+
     
         /***
          * General Sections 
@@ -114,12 +139,13 @@
             padding: 10px 0px 0px;
         }
 
-        #excerpts>h2{
+        #excerpts>h2, #excerpts>p{
             padding: 0px 10px;
         }
 
         .excerpt_table{
-            padding: 2px 3px 5px;
+            border-spacing: 0px;
+            padding-bottom: 10px;
             margin: 0px;
             border-top: 1px solid #003366;
             border-bottom: 1px solid #003366;
@@ -131,13 +157,13 @@
             border-radius: 0px 0px 5px 5px;
         }
 
-        .excerpt_metadata>p {
-            margin: 0px;
-            line-height: 120%;
+        .excerpt_title{
+            background-color: #aed8e6;
+            padding: 0px 5px;
         }
 
         .excerpt_body{
-            padding: 15px 0px 10px;
+            padding: 15px 5px 10px;
         }
         
         .excerpt_body>p{
@@ -146,6 +172,16 @@
 
         .excerpt_body>img{
             margin: 0.3em 15px 5px 5px;
+        }
+
+        .excerpt_metadata>p {
+            margin: 0px 5px;
+            line-height: 130%;
+        }
+
+        .excerpt_byline, .excerpt_byline a{
+            color: #367da9;
+            font-size: 1.1em;
         }
 
         /* Alternating backgrounds of post clips */
@@ -172,11 +208,74 @@
         .poster_cell>p{
             margin: 2px 0px;
         }
+
+        /***
+         * Desktop Version
+         ***/
+        @media screen and (min-width: 640px) {
+            .topic_listing{
+                display: table;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .topic_listing>h3{
+                display: table-cell;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                vertical-align: middle;
+                text-align: left;
+            }
+
+            .topic_listing>.topic_buttons{
+                display: table-cell;
+                min-width: 250px;
+                vertical-align: middle;
+                text-align: center;
+                padding: 2px 5px;
+                margin: 0px;
+            }
+
+            .excerpt_metadata{
+                display: table;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .excerpt_metadata>p{
+                display: table-cell;
+                width: 33%;
+                vertical-align: middle;
+                text-align: center;
+                padding: 0px 5px;
+                margin: 0px;
+            }
+
+            .excerpt_buttons{
+                display: table-cell;
+                min-width: 250px;
+                vertical-align: middle;
+                text-align: center;
+                padding: 0px 5px;
+                margin: 0px;
+            }
+
+        }
     </style>
   </head>
-  <body><table><tr><td class="body">
-    <a href="http://forums.e-democracy.org/groups/mpls" style="text-decoration: none; color: black;"><h1>Minneapolis Issues Forum</h1></a>
-    <p style="margin: 5px 5px 0px; color:#494949;">Connecting <strong>1234</strong> members <a href="#"><img style="vertical-align: middle; margin: 0px 5px;" src="http://image.iapp-email.com/lib/ffcf14/m/1/social_default_facebook_icon.jpg"/></a> <a href="#"><img style="vertical-align: middle; margin: 0px 5px;" src="http://image.iapp-email.com/lib/ffcf14/m/1/social_default_twitter_icon.jpg"/></a></p> 
+  <body>
+  <p>This is a mockup of the new E-Democracy Topics Digest. Please take a look and send your feedback to <a href="mailto:bill.bushey@e-democracy.org">bill.bushey@e-democracy.org</a>. When sending feedback, please include what you used to visit this page (i.e. a laptop, a phone, a tablet), what operating system (i.e. Windows, OS X, Android, iOS), and what browser (i.e. IE, Firefox, Safari, Dolphin).</p>
+  <p>We've taken special interest in designing this digest to work on mobile devices. If you have a mobile phone, please visit this mockup with your phone and send in your feedback.</p>
+  <p>Note that buttons to clips and to the top, as well as email links, work. All other buttons and links are dummies.</p>
+  <p><strong>Are you a designer?</strong> If you're a designer in the Twin Cities, we invite you to send us your improved version of this digest. Just email <a href="mailto:bill.bushey@e-democracy.org">bill.bushey@e-democracy.org</a> with your HTML attached, or a URL. If we like your design we'll use it, credit you, and take you out to lunch!</p> 
+  <hr/>
+  <p><strong>Subject</strong>: mpls Topic Digest: 8 New Posts, 0 New Topics</p>
+  <table><tr><td class="body">
+    <a href="http://forums.e-democracy.org/groups/mpls" class="header_link"><h1>Minneapolis Issues Forum</h1></a>
+    <p style="margin: 5px 5px 0px; color:#494949;">Connecting <strong>1234</strong> members <a href="#"><img class="social_media_icon" style="" src="http://e-democracy.org/images/icons/facebook-24x24.png"/></a> <a href="#"><img class="social_media_icon" src="http://e-democracy.org/images/icons/twitter-24x24.png"/></a></p> 
     <div id="topics" class="section">
       <a name="topics_list"><h2> Today's Active Topics</h2></a>
       <div class="topic_listing">
@@ -199,7 +298,7 @@
         <h3><span class="topic_number">4.</span> <a href="#">Ward 10 Candidate Lisa Bender Open Meeting</a></h3>
         <p class="topic_buttons"><a href="#topic4" class="button">Read Clip</a> <a href="#" class="button">Read Online</a></p>
       </div>
-      <div class="topic_listing">
+      <div class="topic_help">
         <h3>Start a New Topic</h3>
         <p style="margin-left: 11px;">To start a new topic, email <a href="mailto:mpls@forums.e-democracy.org">mpls@forums.e-democracy.org</a>. Be sure to include a subject.</p>
       </div>
@@ -210,30 +309,28 @@
     </div>
     <div id="excerpts" class="section">
       <h2>Topic Clips</h2>
-      
+      <p>Most recent clips only. Visit <a href="#">forum home</a> for more.</p>
       <table class="excerpt_table odd">
         <tbody>
           <tr>
-            <td>
+            <td class="excerpt_title">
               <a name="topic1"><h3><span class="topic_number">1.</span> <a href="#">Minneapolis gets D- for spending transparency</a></h3></a>
             </td>
           </tr>
-          <tr> 
-            <td class="excerpt_metadata">
-              <p><strong>Posts</strong>: 2 New - 5 Total</p>
-              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
-              <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
-            </td>
-          </tr>
           <tr>
             <td class="excerpt_body">
               <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/>
-              <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post. [ <a href="#">read more</a> ]</p>
             </td>
           </tr>
           <tr> 
-            <td class="excerpt_buttons">
-              <a href="#" class="button">Read Online</a> <a href="#listing1" class="button">Go to Top</a>
+            <td class="excerpt_metadata">
+              <p class="excerpt_byline">5:00pm CST by <a href="#">Bill Bushey</a></p>
+              <p><strong>Posts</strong>: 2 New - 5 Total</p>
+              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+              <div class="excerpt_buttons">
+                <a href="#topics_list" class="button">Go to Top</a> <a href="#" class="button">Read Online</a>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -241,26 +338,24 @@
       <table class="excerpt_table even">
         <tbody>
           <tr>
-            <td>
+            <td class="excerpt_title">
               <a name="topic2"><h3><span class="topic_number">2.</span> <a href="#">North Minneapolis needs density not subsidized new "green" houses</a></h3></a>
-            </td>
-          </tr>
-          <tr> 
-            <td class="excerpt_metadata">
-              <p><strong>Posts</strong>: 2 New - 5 Total</p>
-              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
-              <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
             </td>
           </tr>
           <tr>
             <td class="excerpt_body">
               <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/>
-              <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post. [ <a href="#">read more</a> ]</p>
             </td>
           </tr>
           <tr> 
-            <td class="excerpt_buttons">
-              <a href="#" class="button">Read Online</a> <a href="#listing2" class="button">Go to Top</a>
+            <td class="excerpt_metadata">
+              <p class="excerpt_byline">5:00pm CST by <a href="#">Bill Bushey</a></p>
+              <p><strong>Posts</strong>: 2 New - 5 Total</p>
+              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+              <div class="excerpt_buttons">
+                <a href="#topics_list" class="button">Go to Top</a> <a href="#" class="button">Read Online</a>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -268,26 +363,24 @@
       <table class="excerpt_table odd">
         <tbody>
           <tr>
-            <td>
+            <td class="excerpt_title">
               <a name="topic3"><h3><span class="topic_number">3.</span> <a href="#">Our failed criminal justice system</a></h3></a>
-            </td>
-          </tr>
-          <tr> 
-            <td class="excerpt_metadata">
-              <p><strong>Posts</strong>: 2 New - 5 Total</p>
-              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
-              <p><strong>Newest Post</strong>: 5:00pm by The Very Esteemed William Preston Bushey, Esq.</p>
             </td>
           </tr>
           <tr>
             <td class="excerpt_body">
               <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/>
-              <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post.</p>
+              <p>This is some stuff I have to say about this topic. There are things going on, and I am talking about them. Also, whatever happens, I'll continue to post. [ <a href="#">read more</a> ]</p>
             </td>
           </tr>
           <tr> 
-            <td class="excerpt_buttons">
-              <a href="#" class="button">Read Online</a> <a href="#listing3" class="button">Go to Top</a>
+            <td class="excerpt_metadata">
+              <p class="excerpt_byline">5:00pm CST by <a href="#">The Very Esteemed William Preston Bushey, Esq.</a></p>
+              <p><strong>Posts</strong>: 2 New - 5 Total</p>
+              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+              <div class="excerpt_buttons">
+                <a href="#topics_list" class="button">Go to Top</a> <a href="#" class="button">Read Online</a>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -295,34 +388,24 @@
       <table class="excerpt_table even">
         <tbody>
           <tr>
-            <td>
+            <td class="excerpt_title">
               <a name="topic4"><h3><span class="topic_number">4.</span> <a href="#">Ward 10 Candidate Lisa Bender Open Meeting</a></h3></a>
-            </td>
-          </tr>
-          <tr> 
-            <td class="excerpt_metadata">
-              <p><strong>Posts</strong>:  2 New - 5 Total</p>
-              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
-              <p><strong>Newest Post</strong>: 5:00pm by Bill Bushey</p>
             </td>
           </tr>
           <tr>
             <td class="excerpt_body">
               <img src="http://forums.e-democracy.org/p/billbushey/photo" align="left"/>
-              <p>This is some stuff.</p> 
-            </tr>
-          </tr>
-          <tr> 
-            <td class="excerpt_metadata">
-              <!-- Move to under the clip -->
-              <p><strong>Posts</strong>:  2 New - 5 Total - Newest at 5:00pm</p>
-              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+              <p>This is some stuff I have to say. [ <a href="#">read more</a> ]</p>
             </td>
           </tr>
-          <tr> 
-            <td class="excerpt_buttons">
-              <!-- Flip these -->
-              <a href="#" class="button">Read Online</a> <a href="#listing4" class="button">Go to Top</a>
+          <tr>
+            <td class="excerpt_metadata">
+              <p class="excerpt_byline">5:00pm CST by <a href="#">Bill Bushey</a></p>
+              <p><strong>Posts</strong>:  2 New - 5 Total</p>
+              <p><strong>Keywords</strong>: <a href="#">stuff</a> <a href="#">things</a> <a href="#">whatever</a></p>
+              <div class="excerpt_buttons">
+                <a href="#topics_list" class="button">Go to Top</a> <a href="#" class="button">Read Online</a>
+              </div>
             </td>
           </tr>
         </tbody>
