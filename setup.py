@@ -34,6 +34,7 @@ setup(name='edem.group.messages.topicsdigest',
         'setuptools',
         'gs.skin.ogn.edem',
         'gs.group.messages.topicsdigest',
+        'Products.GSGroupMember',
         # -*- Extra requirements: -*-
     ],
     entry_points="""
