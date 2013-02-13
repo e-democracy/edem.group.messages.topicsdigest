@@ -55,5 +55,16 @@
     weight="30"
     title="News from E-Democracy"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
+  <!-- Clips Viewlets -->
+  <browser:viewlet
+    name="edem.DailyTopicsDigestClipsHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager=".interfaces.IDailyTopicsDigestHtmlVM"
+    class=".viewlets.DailyTopicsDigestClipsViewlet"
+    template="browser/templates/dailyTopicsDigestClips-html.pt"
+    weight="40"
+    title="Daily Topic Clips"/>
 </configure>
 

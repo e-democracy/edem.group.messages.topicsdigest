@@ -24,6 +24,9 @@ class HeaderFooterViewlet(HeaderFooterBase):
         twitterId = self.groupInfo.get_property('twitterId', '')
         if not twitterId: return None
         else: return 'https://twitter.com/%s' % twitterId
+###
+### List Viewlets###
+###
 
 class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet):
 
@@ -36,3 +39,15 @@ class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet):
         config = getattr(self.context, 'GlobalConfiguration')
         emailDomain = config.getProperty('emailDomain') 
         return '%s@%s' % (self.groupInfo.get_id(), emailDomain)
+
+###
+### Clip Viewlets ###
+###
+
+class DailyTopicsDigestClipsViewlet(DailyTopicsDigestViewlet):
+
+    def __init__(self, context, request, view, manager):
+        super(DailyTopicsDigestClipsViewlet, self).__init__(context, request,
+                                                    view, manager)
+
+

@@ -1,0 +1,29 @@
+    <div id="excerpts" class="section">
+      <h2>Topic Clips</h2>
+      <p>Most recent clips only. Visit <a href="#" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
+      <table class="excerpt_table" tal:repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]" tal:attributes="class python: 'excerpt_table odd' if repeat['topic'].odd else 'excerpt_table even' ">
+        <tbody>
+          <tr>
+            <td class="excerpt_title">
+              <a name="topic" tal_attributes="name python:'topic%s' % repeat['topic'].number">
+                <h3>
+                  <span class="topic_number"><tal:block content="repeat/topic/number"/>.</span>
+                  <a href="#" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a>
+                </h3>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="excerpt_body">
+
+            </td>
+          </tr>
+          <tr>
+            <td class="excerpt_metadata">
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
