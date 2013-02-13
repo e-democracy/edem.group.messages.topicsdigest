@@ -1,4 +1,5 @@
 # coding=utf-8
+from topicsDigest import DailyTopicsDigest
 from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as HeaderFooterBase, DailyTopicsDigestViewlet 
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 
@@ -49,5 +50,6 @@ class DailyTopicsDigestClipsViewlet(DailyTopicsDigestViewlet):
     def __init__(self, context, request, view, manager):
         super(DailyTopicsDigestClipsViewlet, self).__init__(context, request,
                                                     view, manager)
+        self.__topicsDigest__ = DailyTopicsDigest(self.context, self.siteInfo)
 
 
