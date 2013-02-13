@@ -11,16 +11,16 @@ class HeaderFooterViewlet(HeaderFooterBase):
 
     @property
     def groupMembersCount(self):
-        return self.groupMembersInfo.fullMemberCount
+        return self.groupInfo.group_members_info.fullMemberCount
     
     @property
     def groupFacebookPage(self):
         facebookId = self.groupInfo.get_property('facebookId', '') 
-        if facebookId is None: return None
+        if not facebookId: return None
         else: return 'https://www.facebook.com/%s' % facebookId
 
     @property
     def groupTwitterPage(self):
         twitterId = self.groupInfo.get_property('twitterId', '')
-        if twitterId is None: return None
+        if not twitterId: return None
         else: return 'https://twitter.com/%s' % twitterId
