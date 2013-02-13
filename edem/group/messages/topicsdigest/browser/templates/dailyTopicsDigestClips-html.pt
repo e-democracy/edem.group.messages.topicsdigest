@@ -15,7 +15,7 @@
           </tr>
           <tr>
             <td class="excerpt_body">
-
+              <img tal:condition="topic/last_post_author/imageUrl" tal:attributes="src topic/last_post_author/imageUrl" align="left"/>
             </td>
           </tr>
           <tr>
