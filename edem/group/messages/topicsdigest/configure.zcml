@@ -23,7 +23,7 @@
   <!-- ###Viewlets### -->
   <!-- Header Viewlets -->
   <browser:viewlet
-    name="groupserver.DailyTopicsDigestHeaderHtmlViewlet"
+    name="edem.DailyTopicsDigestHeaderHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.View"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
@@ -35,7 +35,7 @@
 
   <!-- List Viewlets -->
   <browser:viewlet
-    name="groupserver.DailyTopicsDigestListHtmlViewlet"
+    name="edem.DailyTopicsDigestListHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.View"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
@@ -43,5 +43,17 @@
     template="browser/templates/dailyTopicsDigestList-html.pt"
     weight="20"
     title="Daily Topics List"/>
+
+  <!-- News Viewlets -->
+  <browser:viewlet
+    name="edem.DailyTopicsDigestNewsHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager=".interfaces.IDailyTopicsDigestHtmlVM"
+    class=".viewlets.HeaderFooterViewlet"
+    template="browser/templates/news-html.pt"
+    weight="30"
+    title="News from E-Democracy"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 </configure>
 

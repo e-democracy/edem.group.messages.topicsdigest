@@ -1,0 +1,4 @@
+    <div id="e-dem_teaser" class="section">
+      <h2>E-Democracy News</h2>
+      <tal:block content="structure python:getattr(context, 'digest_news.xml')(method='html')"/>
+    </div>
