@@ -274,7 +274,9 @@
         }
     </style>
   </head>
-  <body tal:content="structure provider:groupserver.DailyTopicsDigestHtmlVM">
+  <body>
+  <table><tr><td class="body" tal:content="structure provider:groupserver.DailyTopicsDigestHtmlVM">
     Content of the daily topics digest in html.
+  </td></tr></table>
   </body>
 </html>
