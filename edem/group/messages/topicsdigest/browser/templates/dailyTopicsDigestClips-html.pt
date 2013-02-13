@@ -5,7 +5,7 @@
         <tbody>
           <tr>
             <td class="excerpt_title">
-              <a name="topic" tal_attributes="name python:'topic%s' % repeat['topic'].number">
+              <a name="topic" tal:attributes="name python:'topic%s' % repeat['topic'].number()">
                 <h3>
                   <span class="topic_number"><tal:block content="repeat/topic/number"/>.</span>
                   <a href="#" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a>
