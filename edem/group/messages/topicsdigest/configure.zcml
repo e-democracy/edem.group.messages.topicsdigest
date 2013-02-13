@@ -13,7 +13,7 @@
 
   <!-- No need to override viewlet managers -->
 
-  <!-- ###Overridden Viewlets### -->
+  <!-- ###Viewlets### -->
   <!-- Header Viewlets -->
   <browser:viewlet
     name="groupserver.DailyTopicsDigestHeaderHtmlViewlet"
@@ -25,5 +25,16 @@
     weight="10"
     title="Daily Digest Header in HTML"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
+  <!-- List Viewlets -->
+  <browser:viewlet
+    name="groupserver.DailyTopicsDigestListHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager="gs.group.messages.topicsdigest.interfaces.IDailyTopicsDigestHtmlVM"
+    class=".viewlets.DailyTopicsDigestListViewlet"
+    template="browser/templates/dailyTopicsDigestList-html.pt"
+    weight="20"
+    title="Daily Topics List"/>
 </configure>
 

@@ -35,3 +35,14 @@ The following pages are overridden by this egg:
 In the case of html pages, the templates (dailyTopicsDigest-* and weeklyTopicsDigest-*) 
 are where the CSS for the digest is defined. Aside from this, not much else of 
 interest happens in the digest page templates.
+
+Digest Viewlets
+==============
+
+The HTML digests use 5 viewlets:
+
+* A 'header' viewlet that displays the group name, membership size, and social media links
+* A 'list' viewlet that displays the list of topics
+* A 'news' viewlet that displays organizational news from E-Democracy
+* A 'clips' viewlet that displays clips from topics
+* A 'footer' viewlet that displays standard help/footer text

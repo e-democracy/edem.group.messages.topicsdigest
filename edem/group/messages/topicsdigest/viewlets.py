@@ -1,5 +1,5 @@
 # coding=utf-8
-from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as HeaderFooterBase
+from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as HeaderFooterBase, DailyTopicsDigestViewlet 
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 
 class HeaderFooterViewlet(HeaderFooterBase):
@@ -24,3 +24,11 @@ class HeaderFooterViewlet(HeaderFooterBase):
         twitterId = self.groupInfo.get_property('twitterId', '')
         if not twitterId: return None
         else: return 'https://twitter.com/%s' % twitterId
+
+class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet):
+
+    def __init__(self, context, request, view, manager):
+        super(DailyTopicsDigestListViewlet, self).__init__(context, request,
+                                                    view, manager)
+
+
