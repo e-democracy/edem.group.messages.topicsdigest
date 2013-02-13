@@ -23,6 +23,10 @@
         table td{border-collapse:collapse;}
 
         /* Alot of email clients do not handle body background colors. Using a table that contains the entire email to get around that.*/
+        table.body{
+            width: 100% !important;
+            height: 100% !important;
+        }
         td.body{
             font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif;
             line-height: 150%;
@@ -275,7 +279,7 @@
     </style>
   </head>
   <body>
-  <table><tr><td class="body" tal:content="structure provider:edem.DailyTopicsDigestHtmlVM">
+  <table class="body"><tr><td class="body" tal:content="structure provider:edem.DailyTopicsDigestHtmlVM">
     Content of the daily topics digest in html.
   </td></tr></table>
   </body>

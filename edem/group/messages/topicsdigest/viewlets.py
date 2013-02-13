@@ -31,4 +31,8 @@ class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet):
         super(DailyTopicsDigestListViewlet, self).__init__(context, request,
                                                     view, manager)
 
-
+    @property
+    def groupEmail(self):
+        config = getattr(self.context, 'GlobalConfiguration')
+        emailDomain = config.getProperty('emailDomain') 
+        return '%s@%s' % (self.groupInfo.get_id(), emailDomain)

@@ -5,4 +5,8 @@
         <h3><span class="topic_number"><tal:block content="repeat/topic/number"/>.</span> <a href="#" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a></h3>
         <p class="topic_buttons"><a href="#topic" tal_attributes="href python:'#topic%s' % repeat['topic'].number" class="button">Read Clip</a> <a href="#" tal:attributes="href topic/topic_url" class="button">Read Online</a></p>
       </div>
+      <div class="topic_help">
+        <h3>Start a New Topic</h3>
+        <p style="margin-left: 11px;">To start a new topic, email <a href="#" tal:attributes="href python: 'mailto:%s' % view.groupEmail" tal:content="view/groupEmail">Email Address</a>. Be sure to include a subject.</p>
+      </div>
     </div>
