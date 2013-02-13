@@ -259,7 +259,7 @@
 
             .excerpt_metadata>p{
                 display: table-cell;
-                width: 33%;
+                width: 50%;
                 vertical-align: middle;
                 text-align: center;
                 padding: 0px 5px;

@@ -20,7 +20,11 @@
           </tr>
           <tr>
             <td class="excerpt_metadata">
-
+              <p class="excerpt_byline"><tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></p>
+              <p><strong>Posts</strong>: <tal:block content="topic/num_posts_today"/> New - <tal:block content="topic/num_posts_total"/> Total</p>
+              <div class="excerpt_buttons">
+                <a href="#topics_list" class="button">Go to Top</a> <a href="#" class="button" tal:attributes="href topic/topic_url">Read Online</a>
+              </div>
             </td>
           </tr>
         </tbody>
