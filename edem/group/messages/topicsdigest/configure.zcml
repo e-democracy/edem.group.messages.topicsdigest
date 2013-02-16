@@ -66,5 +66,18 @@
     template="browser/templates/dailyTopicsDigestClips-html.pt"
     weight="40"
     title="Daily Topic Clips"/>
+
+  <!-- Footer Viewlets -->
+  <browser:viewlet
+    name="edem.DailyTopicsDigestFooterHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager=".interfaces.IDailyTopicsDigestHtmlVM"
+    class=".viewlets.HeaderFooterViewlet"
+    template="browser/templates/footer-html.pt"
+    weight="50"
+    title="Daily Digest Footer in HTML"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
 </configure>
 
