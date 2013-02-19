@@ -2,7 +2,9 @@
 
 from queries import DigestQuery
 from zope.cachedescriptors.property import Lazy
-from gs.group.messages.topicsdigest.topicsDigest import DailyTopicsDigest as BaseDailyTopicsDigest
+from gs.group.messages.topicsdigest.topicsDigest import \
+    DailyTopicsDigest as BaseDailyTopicsDigest, \
+    WeeklyTopicsDigest as BaseWeeklyTopicsDigest
 
 from logging import getLogger
 log = getLogger('edem.group.messages.topicsdigest.TopicsDigest')
@@ -43,3 +45,6 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
 
         topic['last_post_clip'] = topic['last_post_clip'].replace('\n', '<br/>')
         return topic
+
+class WeeklyTopicsDigest(BaseWeeklyTopicsDigest):
+    pass
