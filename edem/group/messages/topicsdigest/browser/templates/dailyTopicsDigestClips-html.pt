@@ -1,5 +1,5 @@
 <tal:block
-  define="groupUrl options/groupUrl | view/groupInfo/url
+  define="groupUrl options/groupUrl | view/groupInfo/url;
           topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
     <div id="excerpts" class="section">
       <h2>Topic Clips</h2>

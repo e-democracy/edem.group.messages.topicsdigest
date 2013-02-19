@@ -6,7 +6,7 @@ from topicsDigest import DailyTopicsDigest, WeeklyTopicsDigest
 class DynamicTopicsDigestNotifier(Base):
 
     def __init__(self, group, request):
-        super(DynamicTopicsDigestNotifier, self).__init(group, request)
+        super(DynamicTopicsDigestNotifier, self).__init__(group, request)
         
     @Lazy
     def topicsDigest(self):

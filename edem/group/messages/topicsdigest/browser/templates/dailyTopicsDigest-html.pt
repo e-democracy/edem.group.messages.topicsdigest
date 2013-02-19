@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=dev-width, initial-scale=1.0"/>
-    <title>Daily Digest: <tal:block content="groupName"/>brought to you by <tal:block content="siteName"/></title>
+    <title>Daily Digest: <tal:block content="groupName"/> brought to you by <tal:block content="siteName"/></title>
 
     <style>
         /* Borrowing some styling from Mail Chimp: https://github.com/mailchimp/Email-Blueprints/blob/master/templates/mobile-basicmobile.html*/
