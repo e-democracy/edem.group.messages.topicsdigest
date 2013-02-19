@@ -25,6 +25,21 @@ class HeaderFooterViewlet(HeaderFooterBase):
         twitterId = self.groupInfo.get_property('twitterId', '')
         if not twitterId: return None
         else: return 'https://twitter.com/%s' % twitterId
+
+    @property
+    def groupEmail(self):
+        config = getattr(self.context, 'GlobalConfiguration')
+        self.emailDomain = config.getProperty('emailDomain')
+        return '%s@%s' % (self.groupInfo.get_id(), self.emailDomain)
+
+    @property
+    def supportEmail(self):
+        config = getattr(self.context, 'GlobalConfiguration')
+        retval = config.getProperty('supportEmail', '')
+
+        assert retval
+        return retval
+
 ###
 ### List Viewlets###
 ###

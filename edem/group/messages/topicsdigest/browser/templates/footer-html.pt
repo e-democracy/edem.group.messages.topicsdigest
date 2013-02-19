@@ -1,0 +1,12 @@
+    <div id="footer" style="border-top:medium solid #666666;">
+      <p> Your received this email because you are a member of <span tal:content="view/groupInfo/name">Forum Name</span> and you are set to receive a regular <em>digest</em> of topics.</p>
+      <p>
+        <strong>Leave?</strong> <a tal:attributes="href string:mailto:${view/groupEmail}?Subject=unsubscribe">Email <code tal:content="view/groupEmail">group@email.address</code></a> with the subject line <code>unsubscribe</code>.
+      </p>
+      <p>
+        <strong>More email?</strong> <a tal:attributes="href string:mailto:${view/groupEmail}?Subject=digest%20off">Email <code tal:content="view/groupEmail">group@email.address</code></a> with the subject line <code>digest off</code> to receive an email every time a member posts. 
+      </p>
+      <p>
+        <strong>Help!</strong> <a tal:attributes="href string:mailto:${view/supportEmail}?Subject=Digest%20Issue">Email <code tal:content="view/supportEmail">support@email.address</code></a> if you have any problems.
+      </p>
+    </div>
