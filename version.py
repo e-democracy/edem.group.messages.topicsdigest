@@ -38,17 +38,12 @@ def parse_version_from_package():
 
 def get_version():
     try:
-        globalid = execute_command("hg identify -i")
-        commitdate = execute_command("hg log -r %s --template '{date|isodatesec}'" % globalid)
-        # convert date to UTC unix timestamp, using the date command because python
-        # date libraries do not stabilise till about 2.6
-        timestamp = int(execute_command('date -d"%s" --utc +%%s' % commitdate))
-    
-        # finally we have something we can use!
-        dt = datetime.datetime.utcfromtimestamp(timestamp)
+        gitLog = execute_command('git log -1 --format="%ct-%H"')
+        (commitdate, dash, commithash) = gitLog.partition('-')
+        dt = datetime.datetime.utcfromtimestamp(float(commitdate))
         datestring = dt.strftime('%Y%m%d%H%M%S')
 
-        version_string = "%s-%s-%s" % (version, datestring, globalid)
+        version_string = "%s-%s-%s" % (version, datestring, commithash)
 
     except CommandError, IntegerError:
         version_string = parse_version_from_package()
