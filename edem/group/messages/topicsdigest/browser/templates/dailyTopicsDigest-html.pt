@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<tal:block define="siteName options/siteName | view/siteInfo/name;
+                   groupName options/groupName | view/groupInfo/name">
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=dev-width, initial-scale=1.0"/>
-    <title>Daily Digest: <tal:block content="view/groupInfo/name"/>brought to you by <tal:block content="view/siteInfo/name"/></title>
+    <title>Daily Digest: <tal:block content="groupName"/>brought to you by <tal:block content="siteName"/></title>
 
     <style>
         /* Borrowing some styling from Mail Chimp: https://github.com/mailchimp/Email-Blueprints/blob/master/templates/mobile-basicmobile.html*/
@@ -284,3 +286,4 @@
   </td></tr></table>
   </body>
 </html>
+</tal:block>

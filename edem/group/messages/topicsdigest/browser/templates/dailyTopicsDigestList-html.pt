@@ -1,6 +1,7 @@
+<tal:block define="topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
     <div id="topics" class="section">
       <a name="topics_list"><h2> Today's Active Topics</h2></a>
-      <div class="topic_listing" tal:repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
+      <div class="topic_listing" tal:repeat="topic topics">
         <a name="listing" tal:attributes="name string:listing${repeat/topic/number}"></a>
         <h3><span class="topic_number"><tal:block content="repeat/topic/number"/>.</span> <a href="#" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a></h3>
         <p class="topic_buttons"><a href="#topic" tal:attributes="href string:#topic${repeat/topic/number}" class="button">Read Clip</a> <a href="#" tal:attributes="href topic/topic_url" class="button">Read Online</a></p>
@@ -10,3 +11,4 @@
         <p style="margin-left: 11px;">To start a new topic, email <a href="#" tal:attributes="href python: 'mailto:%s' % view.groupEmail" tal:content="view/groupEmail">Email Address</a>. Be sure to include a subject.</p>
       </div>
     </div>
+</tal:block>

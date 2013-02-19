@@ -1,7 +1,10 @@
+<tal:block
+  define="groupUrl options/groupUrl | view/groupInfo/url
+          topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
     <div id="excerpts" class="section">
       <h2>Topic Clips</h2>
       <p>Most recent clips only. Visit <a href="#" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
-      <table class="excerpt_table" tal:repeat="topic options/topicsDigest/topics | view/topicsDigest/topics | python:[]" tal:attributes="class python: 'excerpt_table odd' if repeat['topic'].even() else 'excerpt_table even' ">
+      <table class="excerpt_table" tal:repeat="topic topics" tal:attributes="class python: 'excerpt_table odd' if repeat['topic'].even() else 'excerpt_table even' ">
         <tbody>
           <tr>
             <td class="excerpt_title">
@@ -33,3 +36,4 @@
       </table>
 
     </div>
+</tal:block>
