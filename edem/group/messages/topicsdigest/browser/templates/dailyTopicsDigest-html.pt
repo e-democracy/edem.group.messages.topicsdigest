@@ -20,25 +20,10 @@
          * General body styling
          ***/
         /* Reset Styles */
-        body{margin:0; padding:0;}
         img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
         table td{border-collapse:collapse;}
 
         /* Alot of email clients do not handle body background colors. Using a table that contains the entire email to get around that.*/
-        table.body{
-            width: 100% !important;
-            height: 100% !important;
-        }
-        td.body{
-            font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif;
-            line-height: 150%;
-            background-color:#D4ECF5;
-            margin: 0px;
-            padding: 5px;
-            color: black;
-            height: 100% !important;
-            width: 100% !important;
-        }
 
         /***
          * Headers 
@@ -280,10 +265,16 @@
         }
     </style>
   </head>
-  <body>
-  <table class="body"><tr><td class="body" tal:content="structure provider:edem.DailyTopicsDigestHtmlVM">
+  <body style="margin: 0; -webkit-text-size-adjust: none; padding: 0; width: 100% !important;">
+  <table class="body" style="width: 100% !important; height: 100% !important;">
+  <tr>
+  <td class="body" 
+    style="margin: 0px; border-collapse: collapse; background-color: #D4ECF5; padding: 5px; line-height: 150%; font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif; color: black; height: 100% !important; width: 100% !important;" bgcolor="#D4ECF5" 
+    tal:content="structure provider:edem.DailyTopicsDigestHtmlVM">
     Content of the daily topics digest in html.
-  </td></tr></table>
+  </td>
+  </tr>
+  </table>
   </body>
 </html>
 </tal:block>
