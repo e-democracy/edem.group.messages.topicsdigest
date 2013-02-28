@@ -1,7 +1,8 @@
 <tal:block define="topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
     <div id="topics" class="section"
      style="margin: 5px 0px; background-color: #FFFFFF; border: 1px solid #999999; padding: 7px; border-radius: 5px;">
-      <a name="topics_list" style="color: #0645AD; text-decoration: none;"><h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;"> Today's Active Topics</h2></a>
+      <a name="topics_list" style="color: #0645AD; text-decoration: none;"></a>
+      <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;"> Today's Active Topics</h2>
       <div class="topic_listing" 
        style="margin: 0px; padding: 0px; display: table; width: 100%;" tal:repeat="topic topics">
         <a name="listing" style="color: #0645AD; text-decoration: none;" tal:attributes="name string:listing${repeat/topic/number}"></a>
