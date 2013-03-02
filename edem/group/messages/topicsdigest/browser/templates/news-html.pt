@@ -1,4 +1,4 @@
     <div id="e-dem_teaser" class="section" style="margin: 5px 0px; background-color: #FFFFFF; border: 1px solid #999999; padding: 7px; border-radius: 5px;">
-      <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;">E-Democracy News</h2>
+      <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;"><img src="http://e-democracy.org/images/logo/jpeg/wagonwheel48pxRGB.jpg" style="margin-right: 10px; vertical-align:middle;">E-Democracy News</h2>
       <tal:block content="structure python:getattr(context, 'digest_news.xml')(method='html')"/>
     </div>
