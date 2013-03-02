@@ -3,15 +3,13 @@
      style="margin: 5px 0px; background-color: #FFFFFF; border: 1px solid #999999; padding: 7px; border-radius: 5px;">
       <a name="topics_list" style="color: #0645AD; text-decoration: none;"></a>
       <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;"> Today's Active Topics</h2>
-      <div class="topic_listing" 
-       style="margin: 0px; padding: 0px; display: table; width: 100%;" tal:repeat="topic topics">
+      <div class="topic_listing" tal:repeat="topic topics">
         <a name="listing" style="color: #0645AD; text-decoration: none;" tal:attributes="name string:listing${repeat/topic/number}"></a>
         <h3
-         style="font-size: 1.1em; font-weight: normal; margin: 0px; line-height: 150%; color: black; padding: 0px; display: table-cell; vertical-align: middle; text-align: left; width: 100%;" align="left">
+         style="font-size: 1.1em; font-weight: normal; line-height: 150%; color: black;">
          <span class="topic_number"
           style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span> <a href="#" style="font-weight: normal; text-decoration: none; color: black;" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a></h3>
-        <p class="topic_buttons" 
-         style="display: table-cell; min-width: 250px; vertical-align: middle; text-align: center; margin: 0px; padding: 2px 5px;" align="center">
+        <p class="topic_buttons">
          <a href="#topic" tal:attributes="href string:#topic${repeat/topic/number}" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 1px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Read Clip</a> <a href="#" tal:attributes="href topic/topic_url" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 1px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Read Online</a></p>
       </div>
       <div class="topic_help">
