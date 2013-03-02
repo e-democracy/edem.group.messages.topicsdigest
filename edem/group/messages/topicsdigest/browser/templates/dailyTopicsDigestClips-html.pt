@@ -31,11 +31,11 @@
             </td>
           </tr>
           <tr>
-            <td class="excerpt_metadata" style="margin: 0px; border-collapse: collapse; padding: 0px; display: table; width: 100%;">
-              <p class="excerpt_byline" style="font-size: 1.1em; margin: 0px; line-height: 130%; color: #367da9; padding: 0px 5px; display: table-cell; vertical-align: middle; text-align: center; width: 33%;" align="center"><tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></p>
-              <p style="margin: 0px; line-height: 130%; padding: 0px 5px; display: table-cell; text-align: center; vertical-align: middle; width: 33%;" align="center"><strong>Posts</strong>: <tal:block content="topic/num_posts_today"/> New - <tal:block content="topic/num_posts_total"/> Total</p>
-              <p style="margin: 0px; line-height: 130%; padding: 0px 5px; display: table-cell; text-align: center; vertical-align: middle; width: 33%;" align="center"><strong>Keywords</strong>: <tal:block repeat="keyword topic/keywords"><a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}/s/?g=${view/groupInfo/id}&s=$keyword" tal:content="keyword">keyword</a> </tal:block></p>
-              <div class="excerpt_buttons" style="min-width: 250px; margin: 0px; padding: 0px 5px; display: table-cell; text-align: center; vertical-align: middle;" align="center">
+            <td class="excerpt_metadata" style="border-collapse: collapse;">
+              <p class="excerpt_byline" style="font-size: 1.1em; line-height: 130%; color: #367da9;"><tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></p>
+              <p style="line-height: 130%;"><strong>Posts</strong>: <tal:block content="topic/num_posts_today"/> New - <tal:block content="topic/num_posts_total"/> Total</p>
+              <p style="line-height: 130%;"><strong>Keywords</strong>: <tal:block repeat="keyword topic/keywords"><a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}/s/?g=${view/groupInfo/id}&s=$keyword" tal:content="keyword">keyword</a> </tal:block></p>
+              <div class="excerpt_buttons">
                 <a href="#topics_list" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 1px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Go to Top</a> <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 1px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;" tal:attributes="href topic/topic_url">Read Online</a>
               </div>
             </td>
