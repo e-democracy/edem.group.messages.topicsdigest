@@ -9,8 +9,32 @@
          style="font-size: 1.1em; font-weight: normal; line-height: 150%; color: black;">
          <span class="topic_number"
           style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span> <a href="#" style="font-weight: normal; text-decoration: none; color: black;" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a></h3>
-        <p class="topic_buttons">
-         <a href="#topic" tal:attributes="href string:#topic${repeat/topic/number}" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 1px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Read Clip</a> <a href="#" tal:attributes="href topic/topic_url" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 1px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Read Online</a></p>
+        <span class="topic_buttons">
+         <table style="display:inline-block; padding: 0px; margin: 0px;">
+           <tr>
+             <td style="height: 3px;"></td>
+           </tr>
+           <tr>
+             <td style="width: 2px; padding: 0px; margin: 0px;"></td>
+             <td>
+               <a href="#topic" tal:attributes="href string:#topic${repeat/topic/number}" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Read Clip</a>
+             </td>
+             <td style="width: 2px; padding: 0px; margin: 0px;"></td>
+           </tr>
+         </table>
+         <table style="display:inline-block; padding: 0px; margin: 0px;">      
+           <tr>
+             <td style="height: 3px;"></td>
+           </tr>
+           <tr>
+             <td style="width: 2px; padding: 0px; margin: 0px;"></td>
+             <td>
+               <a href="#" tal:attributes="href topic/topic_url" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Read Online</a>
+             </td>
+             <td style="width: 2px; padding: 0px; margin: 0px;"></td>
+           </tr>
+         </table>
+        </span>
       </div>
       <div class="topic_help">
         <h3 style="font-size: 1.1em; font-weight: normal; margin: 10px 0px; line-height: 150%; color: black;">Start a New Topic</h3>

@@ -4,7 +4,7 @@
     <div style="height: 5px;"></div>
     <div id="excerpts" class="section" style="margin: 0px; background-color: #FFFFFF; border: 1px solid #999999; padding: 10px 0px 0px; border-radius: 5px;">
       <h2 style="font-size: 1.4em; line-height: 150%; margin: 10px 0px; color: black; padding: 0px 10px;">Topic Clips</h2>
-      <p style="padding: 0px 10px;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
+      <p style="padding: 0px 10px 10px;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
       <table class="excerpt_table" 
         style="margin: 0px; border-top-color: #003366; background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #003366; border-top-style: solid; border-top-width: 1px; border-spacing: 0px; padding-bottom: 10px; width: 100%;"
         tal:repeat="topic topics" 
