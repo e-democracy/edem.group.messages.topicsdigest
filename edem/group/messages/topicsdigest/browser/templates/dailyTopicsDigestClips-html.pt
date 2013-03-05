@@ -23,11 +23,17 @@
           </tr>
           <tr>
             <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px;">
-              <img 
-               tal:condition="topic/last_post_author/imageUrl" 
-               tal:attributes="src string: ${view/siteInfo/url}${topic/last_post_author/imageUrl}" 
-               style="margin: 0.3em 15px 5px 5px; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto;"
-               align="left"/>
+              <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" align="left"> 
+                <tr>
+                  <td style="padding: 0px; margin: 0px;">
+                    <img 
+                     tal:attributes="src string: ${view/siteInfo/url}${topic/last_post_author/imageUrl}" 
+                     style="margin: 0px; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto;"
+                     align="left"/>
+                  </td>
+                  <td style="width: 10px; padding: 0px; margin: 0px;"></td>
+                </tr>
+              </table>
               <p style="margin: 0px;"><tal:block content="structure topic/last_post_clip">Post Clip</tal:block> [ <a href="#" tal:attributes="href topic/topic_url" style="color: #0645AD; text-decoration: none;"><tal:block condition="topic/last_post_more_available">read more</tal:block><tal:block condition="not:topic/last_post_more_available">read online</tal:block></a>  ]</p>
             </td>
           </tr>
