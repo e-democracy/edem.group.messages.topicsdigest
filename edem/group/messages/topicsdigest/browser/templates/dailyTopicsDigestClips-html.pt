@@ -1,7 +1,8 @@
 <tal:block
   define="groupUrl options/groupUrl | view/groupInfo/url;
           topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
-    <div id="excerpts" class="section" style="margin: 5px 0px; background-color: #FFFFFF; border: 1px solid #999999; padding: 10px 0px 0px; border-radius: 5px;">
+    <div style="height: 5px;"></div>
+    <div id="excerpts" class="section" style="margin: 0px; background-color: #FFFFFF; border: 1px solid #999999; padding: 10px 0px 0px; border-radius: 5px;">
       <h2 style="font-size: 1.4em; line-height: 150%; margin: 10px 0px; color: black; padding: 0px 10px;">Topic Clips</h2>
       <p style="padding: 0px 10px;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
       <table class="excerpt_table" 
@@ -36,8 +37,8 @@
                 <tr>
                   <td style="width: 5px;"></td>
                   <td style="font-size: 1.1em; line-height: 100%; color: #367da9; text-decoration: none;">
-                    <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></td><td style="width: 5px;">
-                    </td>
+                    <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></td>
+                    <td style="width: 5px;"></td>
                 </tr>
               </table>
               <p style="line-height: 130%; margin: 0px 5px;">
@@ -56,7 +57,30 @@
                 </tr>
               </table>
               <div class="excerpt_buttons">
-                <a href="#topics_list" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 10px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Go to Top</a> <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 10px 5px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;" tal:attributes="href topic/topic_url">Read Online</a>
+                <table style="display:inline-block; margin: 0px; padding: 0px;">
+                  <tr>
+                    <td style="height: 5px;"></td>
+                  </tr>
+                  <tr>
+                    <td style="width: 3px; padding: 0px;"></td>
+                    <td style="padding: 0px;">
+                      <a href="#topics_list" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;">Go to Top</a>
+                    </td>
+                    <td style="width: 3px; padding:0px;"></td>
+                  </tr>
+                </table>
+                <table style="display:inline-block; margin: 0px; padding: 0px;">
+                  <tr>
+                    <td style="height: 5px;"></td>
+                  </tr>
+                  <tr>
+                    <td style="width: 3px; padding: 0px;"></td>
+                    <td style="padding: 0px;">
+                      <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; background-color: #D4ECF5; border: 1px solid #003366; padding: 0.4em 0.6875em; color: black; text-decoration: none; display: inline-block; text-align: center; border-radius: .3125em;" tal:attributes="href topic/topic_url">Read Online</a>
+                    </td>
+                    <td style="width: 3px; pading: 0px;"></td>
+                  </tr>
+                </table>
               </div>
             </td>
           </tr>
