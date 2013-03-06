@@ -36,7 +36,7 @@
                 <!-- Excerpt display table -->
                 <table class="excerpt_table" 
                  border=0 cellspacing=0 cellpadding=0
-                 style="margin: 0px; border-top-color: #003366; background-color: #FFFFFF; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #003366; border-top-style: solid; border-top-width: 1px; border-spacing: 0px; width: 100%;"
+                 style="margin: 0px; border-top-color: #003366; background-color: #FFFFFF; border-top-style: solid; border-top-width: 2px; border-spacing: 0px; width: 100%;"
                  tal:repeat="topic topics">
                   <tbody>
                     <tr>
