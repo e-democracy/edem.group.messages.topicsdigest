@@ -9,11 +9,11 @@
          style="margin: 0px; background-color: #FFFFFF; border: 2px solid #999999; padding: 0px; width: 100% !important;">
           <table style="margin 0; padding: 0; width: 100% !important; background-color: #FFFFFF;" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%"><!--Padding for topics section-->
             <tr>
-              <td style="margin: 0; padding: 0; height: 7px;" colspan="3"></td>
+              <td style="margin: 0; padding: 7px 0 0;" colspan="3"></td><!--Top padding-->
             </tr>
             <tr>
-              <td style="margin: 0; padding: 0; width: 7px !important; min-width: 7px !important;">&nbsp;</td>
-              <td style="margin: 0; padding: 0; width: 100% !important;">
+              <td style="margin: 0; padding: 0 7px 0 0;"></td> <!--Left padding-->
+              <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
                 <a name="topics_list" style="color: #0645AD; text-decoration: none;"></a>
                 <h2 style="font-size: 1.4em; margin: 10px 0px 5px; line-height: 150%; color: black;"> Today's Active Topics</h2>
                 <div class="topic_listing" tal:repeat="topic topics">
@@ -43,11 +43,11 @@
                          <td style="margin: 0px; padding: 7px 0 0;" colspan="3"></td>
                        </tr>
                        <tr>
-                         <td style="padding: 0 3px 0 0; margin: 0px;"></td>
+                         <td style="padding: 0 3px 0 0; margin: 0px;"></td><!--Right padding-->
                          <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
                            <a href="#" tal:attributes="href topic/topic_url" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: black; text-decoration: none; display: inline-block; text-align: center;">Read Online</a>
                          </td>
-                         <td style="padding: 0 0 0 3px; margin: 0px;"></td>
+                         <td style="padding: 0 0 0 3px; margin: 0px;"></td><!--Bottom padding-->
                        </tr>
                      </table>
                      </span>
@@ -59,10 +59,10 @@
                 </div>
               </td>
               <!--/Topics section-->
-              <td style="margin: 0; padding: 0; width: 7px !important; min-width: 7px !important;">&nbsp;</td>
+              <td style="margin: 0; padding: 0 0 0 7px;">&nbsp;</td>
             </tr>
             <tr>
-              <td style="margin: 0; padding: 0; height: 7px;" colspan="3"></td>
+              <td style="margin: 0; padding: 0 0 7px;" colspan="3"></td>
             </tr>
           </table><!--/Padding for topics section-->
         </td>
