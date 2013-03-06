@@ -51,12 +51,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px; word-break:break-all;">
+                      <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px; word-break:break-all;" tal:attributes="bgcolor python: '#FFFFFF' if repeat['topic'].even() else '#E1E1E1';">
                         <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" align="left"> 
                           <tr>
-                            <td style="padding: 0px; margin: 0px;" tal:attributes="bgcolor python: '#FFFFFF' if repeat['topic'].even() else '#E1E1E1';">
+                            <td style="padding: 0px; margin: 0px; font-size:6px;">
                               <img 
-                               tal:attributes="src string: ${view/siteInfo/url}${topic/last_post_author/imageUrl}" 
+                               tal:attributes="src string:${view/siteInfo/url}${topic/last_post_author/imageUrl}" 
                                style="margin: 0px; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto;"
                                align="left"/>
                             </td>
@@ -93,7 +93,7 @@
                         </table>
                         <div class="excerpt_buttons">
                           <span style="display:inline-block;"><!-- Button container -->
-                            <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0"><!-- Button margin -->
+                            <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0" align="left"><!-- Button margin -->
                               <tr>
                                 <td style="margin: 0px; padding: 7px 0 0;" colspan="3"></td>
                               </tr>
@@ -107,7 +107,7 @@
                             </table><!-- /Button margin -->
                           </span><!-- /Button container -->
                           <span style="display:inline-block;"><!-- Button container -->
-                            <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0"><!-- Button margin -->
+                            <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0" align="left"><!-- Button margin -->
                               <tr>
                                 <td style="margin: 0px; padding: 7px 0 0;" colspan="3"></td>
                               </tr>
