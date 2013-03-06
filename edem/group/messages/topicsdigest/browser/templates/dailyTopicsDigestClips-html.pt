@@ -15,8 +15,24 @@
             <tr>
               <td style="margin: 0; padding: 0;"></td> <!--Left padding-->
               <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
-                <h2 style="font-size: 1.4em; line-height: 150%; margin: 10px 0px; color: black; padding: 0px 10px;">Topic Clips</h2>
-                <p style="padding: 0px 10px 10px;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
+                <h2 style="font-size: 1.4em; line-height: 150%; margin: 10px 10px 5px; color: black; padding: 0;">Topic Clips</h2>
+                <!-- Excerpts intro text margin table-->
+                <table style="margin 0; padding: 0; width: 100% !important; background-color: #FFFFFF;" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%"><!--Padding for topics section-->
+                  <tr>
+                    <td style="margin: 0; padding: 0;" colspan="3"></td><!--Top Margin-->
+                  </tr>
+                  <tr>
+                    <td style="margin: 0; padding: 0 10px 0 0;"></td> <!--Left Margin-->
+                    <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
+                      Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.
+                    </td>
+                    <td style="margin: 0; padding: 0 0 0 10px;"></td> <!--Right Margin-->
+                  </tr>
+                  <tr>
+                    <td style="margin: 0; padding: 0 0 10px;" colspan="3"></td><!--Bottom Margin-->
+                  </tr>
+                </table>
+                <!-- /Excerpts intro text margin table-->
                 <!-- Excerpt display table -->
                 <table class="excerpt_table" 
                  border=0 cellspacing=0 cellpadding=0
