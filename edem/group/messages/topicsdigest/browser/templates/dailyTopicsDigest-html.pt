@@ -15,7 +15,8 @@
         #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
         body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
         h2,h2 a,h2 a:visited,h3,h3 a,h3 a:visited,h4,h5,h6,.t_cht {color:#000 !important} /* Undo Hotmail's Green headings */
-        table {border-collapse:collapse;} 
+        table {border-collapse: collapse;} 
+        table td { border-collapse: collapse; }
         p {margin-bottom: 0;} /*Overriding Hotmail's embedded CSS*/ 
         body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
 
