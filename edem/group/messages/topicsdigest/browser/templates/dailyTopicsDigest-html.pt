@@ -85,14 +85,28 @@
     </style>
   </head>
   <body style="margin: 0; -webkit-text-size-adjust: none; padding: 0; width: 100% !important;">
-  <table class="body" style="width: 100% !important; height: 100% !important;" border=0 cellpadding=0 cellspacing=0>
-  <tr>
-  <td class="body" 
-    style="margin: 0px; border-collapse: collapse; background-color: #D4ECF5; padding: 5px; line-height: 150%; font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif; color: black; height: 100% !important; width: 100% !important;" bgcolor="#D4ECF5" 
-    tal:content="structure provider:edem.DailyTopicsDigestHtmlVM">
-    Content of the daily topics digest in html.
-  </td>
-  </tr>
+  <table>
+    <tr>
+      <td style="background-color: #D4ECF5;" bgcolor="#D4ECF5">
+        <table class="body" style="width: 100% !important; height: 100% !important;" border=0 cellpadding=0 cellspacing=0>
+          <tr>
+            <td colspan="3" style="height: 7px;"></td>
+          </tr>
+          <tr>
+            <td style="width: 7px;"></td>
+            <td class="body" 
+             style="margin: 0px; border-collapse: collapse; padding: 0px; line-height: 150%; font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif; color: black; height: 100% !important; width: 100% !important;"  
+             tal:content="structure provider:edem.DailyTopicsDigestHtmlVM">
+              Content of the daily topics digest in html.
+            </td>
+            <td style="width: 7px;"></td>
+          </tr>
+          <tr>
+            <td style="height: 7px;"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
   </table>
   </body>
 </html>
