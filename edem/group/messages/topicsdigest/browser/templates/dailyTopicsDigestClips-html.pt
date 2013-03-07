@@ -51,8 +51,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px; word-break:break-all;" tal:attributes="bgcolor python: '#FFFFFF' if repeat['topic'].even() else '#E1E1E1';">
-                        <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" align="left"> 
+                      <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px; word-break:break-all;" bgcolor="#FFFFFF">
+                        <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" ><!-- Author Img margins -->
                           <tr>
                             <td style="padding: 0px; margin: 0px; font-size:6px;">
                               <img 
@@ -62,21 +62,20 @@
                             </td>
                             <td style="width: 10px; padding: 0px; margin: 0px;"></td>
                           </tr>
-                        </table>
+                        </table><!-- /Author Img margins -->
                         <p style="margin: 0px;"><tal:block content="structure topic/last_post_clip">Post Clip</tal:block> [ <a href="#" tal:attributes="href topic/topic_url" style="color: #0645AD; text-decoration: none;"><tal:block condition="topic/last_post_more_available">read more</tal:block><tal:block condition="not:topic/last_post_more_available">read online</tal:block></a>  ]</p>
                       </td>
                     </tr>
                     <tr>
                       <td class="excerpt_metadata" style="border-collapse: collapse;">
-                        <table class="excerpt_byline" style="margin: 0px; width: 100% !important;" >
+                        <table class="excerpt_byline" style="margin: 0px;" >
                           <tr>
                             <td style="width: 5px;"></td>
-                            <td style="font-size: 1.1em; line-height: 100%; width: 100% !important; color: #367da9; text-decoration: none;">
+                            <td style="font-size: 1.1em; line-height: 100%; color: #367da9; text-decoration: none;">
                               <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></td>
                               <td style="width: 5px;"></td>
                           </tr>
                         </table>
-                        <p style="line-height: 130%; margin: 0px 5px;">
                         <table style="margin: 0px;" >
                           <tr>
                             <td style="width: 5px;"></td>
