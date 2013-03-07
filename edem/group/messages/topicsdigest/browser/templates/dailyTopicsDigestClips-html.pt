@@ -52,7 +52,7 @@
                     </tr>
                     <tr>
                       <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px; word-break:break-all;" bgcolor="#FFFFFF">
-                        <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" ><!-- Author Img margins -->
+                        <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" align="left"><!-- Author Img margins -->
                           <tr>
                             <td style="padding: 0px; margin: 0px; font-size:6px;">
                               <img 
