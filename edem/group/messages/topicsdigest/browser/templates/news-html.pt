@@ -1,6 +1,6 @@
     <table style="margin: 0; padding: 0; width: 100% !important;" border="0" cellpadding="0" cellspacing="0" width="100%"><!-- Margin for e-dem_teaser section-->
       <tr>
-        <td style="padding: 5px 0 0; margin: 0px;"></td><!-- Top margin -->
+        <td style="padding: 5px 0 0; margin: 0px; height: 5px;"></td><!-- Top margin -->
       </tr>
       <tr>
         <td id="e-dem_teaser" class="section" style="margin: 0px; background-color: #FFFFFF; border: 2px solid #999999; padding: 0px;">
@@ -11,13 +11,26 @@
             <tr>
               <td style="margin: 0; padding: 0 7px 0 0;"></td><!-- Left padding -->
               <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content -->
-                <table style="margin: 0px;" border="0" cellpadding="0" cellspacing="0"><tr><td><img src="http://e-democracy.org/images/logo/jpeg/wagonwheel48pxRGB.jpg" style="vertical-align:middle;"></td><td style="width: 10px;"></td><td> <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;">E-Democracy News</h2></td></tr></table>
+                <table style="margin: 0px;" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+                      <img src="http://e-democracy.org/images/logo/jpeg/wagonwheel48pxRGB.jpg" style="vertical-align:middle;">
+                    </td>
+                    <td style="width: 10px; padding: 0 10px 0 0;"></td>
+                    <td> 
+                      <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;">E-Democracy News</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" style="margin: 0; padding: 5px 0 0; height: 5px;"></td>
+                  </tr>
+                </table>
                 <tal:block content="structure python:getattr(context, 'digest_news.xml')(method='html')"/>
               </td>
               <td style="margin: 0; padding: 0 0 0 7px;"></td><!-- Right padding -->
             </tr>
             <tr>
-              <td style="margin: 0; padding: 0 0 7px;" colspan="3"></td><!-- Bottom padding-->
+              <td style="margin: 0; padding: 0 0 7px; height: 7px;" colspan="3"></td><!-- Bottom padding-->
             </tr>
         </td>
       </tr>

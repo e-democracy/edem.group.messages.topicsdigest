@@ -1,4 +1,4 @@
-    <h1 style="font-size: 1.1em; margin: 10px 0px 3px; line-height: 150%; color: black;" ><a href="#" class="header_link" style="color: black; text-decoration: none;" tal:attributes="href view/groupInfo/url" tal:content="view/groupInfo/name">Group Name</a></h1>
+    <h1 style="font-size: 1.1em; margin: 10px 0px 3px; line-height: 150%; color: black;" ><a href="#" class="header_link" style="color: #010101; text-decoration: none;" tal:attributes="href view/groupInfo/url" tal:content="view/groupInfo/name">Group Name</a></h1>
     <div style="margin: 5px 5px 0px; color:#494949;">Connecting <strong tal:content="view/groupMembersCount">1234</strong> members 
      <table 
        style="margin 0; padding: 0; display:inline-block" 

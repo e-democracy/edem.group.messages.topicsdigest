@@ -1,12 +1,12 @@
     <div id="footer" style="">
       <p> Your received this email because you are a member of <span tal:content="view/groupInfo/name">Forum Name</span> and you are set to receive a regular <em>digest</em> of topics.</p>
       <p>
-        <strong>Leave?</strong> <a style="color: #0645AD; text-decoration: none;" tal:attributes="href string:mailto:${view/groupEmail}?Subject=unsubscribe">Email <code tal:content="view/groupEmail">group@email.address</code></a> with the subject line <code>unsubscribe</code>.
+        <strong>Leave?</strong> <a style="color: #0645AD; display: inline; text-decoration: none;" tal:attributes="href string:mailto:${view/groupEmail}?Subject=unsubscribe">Email <code style="display: inline;" tal:content="view/groupEmail">group@email.address</code></a> with the subject line <code>unsubscribe</code>.
       </p>
       <p>
-        <strong>More email?</strong> <a style="color: #0645AD; text-decoration: none;" tal:attributes="href string:mailto:${view/groupEmail}?Subject=digest%20off">Email <code tal:content="view/groupEmail">group@email.address</code></a> with the subject line <code>digest off</code> to receive an email every time a member posts. 
+        <strong>More email?</strong> <a style="color: #0645AD; display: inline; text-decoration: none;" tal:attributes="href string:mailto:${view/groupEmail}?Subject=digest%20off">Email <code style="display: inline;" tal:content="view/groupEmail">group@email.address</code></a> with the subject line <code>digest off</code> to receive an email every time a member posts. 
       </p>
       <p>
-        <strong>Help!</strong> <a style="color: #0645AD; text-decoration: none;" tal:attributes="href string:mailto:${view/supportEmail}?Subject=Digest%20Issue">Email <code tal:content="view/supportEmail">support@email.address</code></a> if you have any problems.
+        <strong>Help!</strong> <a style="color: #0645AD; display: inline; text-decoration: none;" tal:attributes="href string:mailto:${view/supportEmail}?Subject=Digest%20Issue">Email <code style="display: inline;" tal:content="view/supportEmail">support@email.address</code></a> if you have any problems.
       </p>
     </div>
