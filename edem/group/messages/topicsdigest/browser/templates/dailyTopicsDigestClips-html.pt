@@ -37,7 +37,8 @@
                   <tr>
                     <td style="margin: 0; padding: 0 10px 0 0;"></td> <!--Left Margin-->
                     <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
-                      Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.
+                      <p style="margin: 0; padding: 0;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
+                      <p style="margin: 0; padding: 0;">To reply, you must click the topic's subject, the [ read more ] link, or the Read Online button.</p>
                     </td>
                     <td style="margin: 0; padding: 0 0 0 10px;"></td> <!--Right Margin-->
                   </tr>
