@@ -1,7 +1,7 @@
 # coding=utf-8
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.topicsdigest.notifiers import DynamicTopicsDigestNotifier as Base
-from topicsDigest import DailyTopicsDigest, WeeklyTopicsDigest
+from topicsDigest import DailyTopicsDigest, ReminderTopicsDigest
 
 class DynamicTopicsDigestNotifier(Base):
 
@@ -27,5 +27,5 @@ class DynamicTopicsDigestNotifier(Base):
     def topicsDigest(self):
         retval = DailyTopicsDigest(self.context, self.siteInfo)
         if not retval.show_digest:
-            retval = WeeklyTopicsDigest(self.context, self.siteInfo)
+            retval = ReminderTopicsDigest(self.context, self.siteInfo)
         return retval

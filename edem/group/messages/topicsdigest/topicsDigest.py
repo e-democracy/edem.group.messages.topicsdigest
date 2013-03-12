@@ -47,8 +47,20 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-daily'
         return topic
 
-class WeeklyTopicsDigest(BaseWeeklyTopicsDigest):
+class ReminderTopicsDigest(BaseWeeklyTopicsDigest):
 
     def __init__(self, context, siteInfo):
-        super(WeeklyTopicsDigest, self).__init__(context, siteInfo)
+        super(ReminderTopicsDigest, self).__init__(context, siteInfo)
         self.frequency = 30
+
+    @Lazy
+    def messageQuery(self):
+        retval = DigestQuery()
+        return retval
+
+    def __formatTopic__(self, topic):
+        topic = super(ReminderTopicsDigest, self).__formatTopic__(topic)
+        topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-reminder'
+        return topic
+
+
