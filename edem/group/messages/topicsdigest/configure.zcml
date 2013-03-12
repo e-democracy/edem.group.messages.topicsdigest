@@ -49,17 +49,6 @@
     title="Daily Digest Header in HTML"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 
-  <browser:viewlet
-    name="edem.ReminderTopicsDigestHeaderHtmlViewlet"
-    for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
-    manager=".interfaces.IReminderTopicsDigestHtmlVM"
-    class=".viewlets.HeaderFooterViewlet"
-    template="browser/templates/header-html.pt"
-    weight="10"
-    title="Reminder Digest Header in HTML"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
-
   <!-- List Viewlets -->
   <browser:viewlet
     name="edem.DailyTopicsDigestListHtmlViewlet"
