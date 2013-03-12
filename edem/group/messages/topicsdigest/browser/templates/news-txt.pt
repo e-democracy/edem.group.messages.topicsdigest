@@ -1,0 +1,4 @@
+
+
+<tal:block content="structure python:getattr(context, 'digest_news.txt')(method='txt')"/>
+

@@ -95,6 +95,18 @@
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 
   <browser:viewlet
+    name="edem.DailyTopicsDigestNewsTxtViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager="gs.group.messages.topicsdigest.interfaces.IDailyTopicsDigestTxtVM"
+    class=".viewlets.HeaderFooterViewlet"
+    template="browser/templates/news-txt.pt"
+    weight="25"
+    title="News from E-Democracy"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
+
+  <browser:viewlet
     name="edem.ReminderTopicsDigestNewsHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.View"
@@ -104,6 +116,18 @@
     weight="30"
     title="News from E-Democracy"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
+  <browser:viewlet
+    name="edem.ReminderTopicsDigestNewsTxtViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager="gs.group.messages.topicsdigest.interfaces.IWeeklyTopicsDigestTxtVM"
+    class=".viewlets.HeaderFooterViewlet"
+    template="browser/templates/news-txt.pt"
+    weight="25"
+    title="News from E-Democracy"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
 
   <!-- Clips Viewlets -->
   <browser:viewlet
