@@ -28,6 +28,14 @@
     class="gs.viewlet.manager.WeightOrderedViewletManager"
     template="browser/templates/topicsDigestVM.pt"/>
 
+  <browser:viewletManager
+    name="edem.ReminderTopicsDigestHtmlVM"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    provides=".interfaces.IReminderTopicsDigestHtmlVM"
+    class="gs.viewlet.manager.WeightOrderedViewletManager"
+    template="browser/templates/topicsDigestVM.pt"/>
+
   <!-- ###Viewlets### -->
   <!-- Header Viewlets -->
   <browser:viewlet
