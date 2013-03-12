@@ -1,0 +1,72 @@
+<tal:block define="topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
+    <table style="margin: 0; padding: 0; width: 100% !important;" border="0" cellpadding="0" cellspacing="0" width="100%"><!--Margin for topics section-->
+      <tr>
+        <td style="height: 5px; padding: 5px 0 0;"></td>
+      </tr>
+      <tr>
+        <!--Topics section-->
+        <td id="topics" class="section"
+         style="margin: 0px; background-color: #FFFFFF; border: 2px solid #999999; padding: 0px; width: 100% !important;">
+          <table style="margin 0; padding: 0; width: 100% !important; background-color: #FFFFFF;" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%"><!--Padding for topics section-->
+            <tr>
+              <td style="margin: 0; padding: 7px 0 0;" colspan="3"></td><!--Top padding-->
+            </tr>
+            <tr>
+              <td style="margin: 0; padding: 0 7px 0 0;"></td> <!--Left padding-->
+              <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
+                <a name="topics_list" style="color: #0645AD; text-decoration: none;"></a>
+                <h2 style="font-size: 1.4em; margin: 10px 0px 5px; line-height: 150%; color: black;"> Today's Active Topics</h2>
+                <div class="topic_listing" tal:repeat="topic topics">
+                  <a name="listing" style="color: #0645AD; text-decoration: none;" tal:attributes="name string:listing${repeat/topic/number}"></a>
+                  <h3
+                   style="font-size: 1.1em; font-weight: normal; line-height: 120%; color: black; margin: 5px 0 0; padding:0;">
+                   <span class="topic_number"
+                    style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span> <a href="#" style="font-weight: normal; text-decoration: none; color: #010101;" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a></h3>
+                   <div class="topic_buttons" style="display: inline-block; margin:0; padding:0;">
+                     <span style="display:inline-block;"><!-- Button container -->
+                       <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0"><!-- Button margin -->
+                         <tr>
+                           <td style="margin: 0px; padding: 7px 0 0;" colspan="3"></td>
+                         </tr>
+                         <tr>
+                           <td style="padding: 0 3px 0 0; margin: 0px;"></td>
+                           <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
+                             <a href="#topic" tal:attributes="href string:#topic${repeat/topic/number}" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: #010101; text-decoration: none; display: inline-block; text-align: center; ">Read Clip</a>
+                           </td>
+                           <td style="padding: 0 0 0 3px; margin: 0px;"></td>
+                         </tr>
+                       </table><!-- /Button margin -->
+                     </span><!-- /Button container -->
+                     <span style="display:inline-block;">
+                       <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0"><!-- Button margin -->     
+                         <tr>
+                           <td style="margin: 0px; padding: 7px 0 0;" colspan="3"></td>
+                         </tr>
+                         <tr>
+                           <td style="padding: 0 3px 0 0; margin: 0px;"></td>
+                           <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
+                             <a href="#" tal:attributes="href topic/topic_url" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: #010101; text-decoration: none; display: inline-block; text-align: center;">Read Online</a>
+                           </td>
+                           <td style="padding: 0 0 0 3px; margin: 0px;"></td>
+                         </tr>
+                       </table><!-- Button margin -->
+                     </span><!-- /Button container -->
+                  </div>
+                </div>
+                <div class="topic_help">
+                  <h3 style="font-size: 1.1em; font-weight: normal; margin: 10px 0px 0px; padding:0; line-height: 150%; color: black;">Start a New Topic</h3>
+                  <p style="margin-left: 11px; margin-top:5px;">To start a new topic, email <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href python: 'mailto:%s' % view.groupEmail" tal:content="view/groupEmail">Email Address</a>. Be sure to include a subject.</p>
+                </div>
+              </td>
+              <!--/Topics section-->
+              <td style="margin: 0; padding: 0 0 0 7px;">&nbsp;</td><!--Right padding-->
+            </tr>
+            <tr>
+              <td style="margin: 0; padding: 0 0 7px;" colspan="3"></td><!--Bottom padding-->
+            </tr>
+          </table><!--/Padding for topics section-->
+        </td>
+      </tr>
+      <!-- No bottom margin -->
+    </table><!--/Margin for topics section-->
+</tal:block>

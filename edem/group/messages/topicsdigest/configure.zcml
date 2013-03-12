@@ -71,6 +71,17 @@
     weight="20"
     title="Daily Topics List"/>
 
+  <browser:viewlet
+    name="edem.ReminderTopicsDigestListHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager=".interfaces.IReminderTopicsDigestHtmlVM"
+    class=".viewlets.ReminderTopicsDigestListViewlet"
+    template="browser/templates/reminderTopicsDigestList-html.pt"
+    weight="20"
+    title="Daily Topics List"/>
+
+
   <!-- News Viewlets -->
   <browser:viewlet
     name="edem.DailyTopicsDigestNewsHtmlViewlet"
