@@ -48,4 +48,7 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         return topic
 
 class WeeklyTopicsDigest(BaseWeeklyTopicsDigest):
-    pass
+
+    def __init__(self, context, siteInfo):
+        super(WeeklyTopicsDigest, self).__init__(context, siteInfo)
+        self.frequency = 30
