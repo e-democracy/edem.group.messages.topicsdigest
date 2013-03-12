@@ -49,6 +49,7 @@ class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet):
     def __init__(self, context, request, view, manager):
         super(DailyTopicsDigestListViewlet, self).__init__(context, request,
                                                     view, manager)
+        self.__topicsDigest__ = DailyTopicsDigest(self.context, self.siteInfo)
 
     @property
     def groupEmail(self):

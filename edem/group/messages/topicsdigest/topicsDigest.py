@@ -44,6 +44,7 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
             topic['last_post_clip'] = topic['last_post_body']
 
         topic['last_post_clip'] = topic['last_post_clip'].replace('\n', '<br/>')
+        topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-daily'
         return topic
 
 class WeeklyTopicsDigest(BaseWeeklyTopicsDigest):
