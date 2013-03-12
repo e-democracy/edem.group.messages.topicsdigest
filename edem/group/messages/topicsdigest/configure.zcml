@@ -13,7 +13,7 @@
 
   <browser:page name="gs-group-messages-topicsdigest-weekly.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    template="browser/templates/weeklyTopicsDigest-html.pt"
+    template="browser/templates/reminderTopicsDigest-html.pt"
     class="gs.group.messages.topicsdigest.notifiermessages.WeeklyMessage"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"
     permission="zope2.View"/>
