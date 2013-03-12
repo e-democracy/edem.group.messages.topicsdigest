@@ -11,7 +11,7 @@ log = getLogger('edem.group.messages.topicsdigest.TopicsDigest')
 
 clip_length = 250
 
-class EdemTopicsDigestMixin(object):
+class DailyTopicsDigest(BaseDailyTopicsDigest):
     """ Represents the content of an E-Democracy daily digest.
 
        Dicts in the list provided by topics include the following attributes,
@@ -25,12 +25,17 @@ class EdemTopicsDigestMixin(object):
                                       is present in the clip
         """
 
+    def __init__(self, context, siteInfo):
+        super(DailyTopicsDigest, self).__init__(context, siteInfo)
+
     @Lazy
     def messageQuery(self):
         retval = DigestQuery()
         return retval
 
     def __formatTopic__(self, topic):
+        topic = super(DailyTopicsDigest, self).__formatTopic__(topic)
+
         if len(topic['last_post_body']) > clip_length:
             topic['last_post_more_available'] = True
             topic['last_post_clip'] = topic['last_post_body'][:clip_length]
@@ -39,31 +44,11 @@ class EdemTopicsDigestMixin(object):
             topic['last_post_clip'] = topic['last_post_body']
 
         topic['last_post_clip'] = topic['last_post_clip'].replace('\n', '<br/>')
-        topic['topic_url'] = topic['topic_url'] + '?' + self.rb
+        topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-daily'
         return topic
 
-
-class DailyTopicsDigest(BaseDailyTopicsDigest):
-    
-    def __init__(self, context, siteInfo):
-        super(DailyTopicsDigest, self).__init__(context, siteInfo)
-        self.rb = 'rb=topicsdigest-daily'
-
-    def __formatTopic__(self, topic):
-        topic = BaseDailyTopicsDigest.__formatTopic__(self, topic)
-        topic = EDemTopicsDigestMixin.__formatTopic__(self, topic)
-        return topic
-
-    
-class ReminderTopicsDigest(BaseWeeklyTopicsDigest):
+class WeeklyTopicsDigest(BaseWeeklyTopicsDigest):
 
     def __init__(self, context, siteInfo):
         super(WeeklyTopicsDigest, self).__init__(context, siteInfo)
         self.frequency = 30
-        self.rb = 'rb=topicsdigest-reminder'
-
-    def __formatTopic__(self, topic):
-        topic = BaseWeeklyTopicsDigest.__formatTopic__(self, topic)
-        topic = EDemTopicsDigestMixin.__formatTopic__(self, topic)
-        return topic
-
