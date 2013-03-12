@@ -1,6 +1,9 @@
 # coding=utf-8
-from topicsDigest import DailyTopicsDigest
-from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as HeaderFooterBase, DailyTopicsDigestViewlet 
+from topicsDigest import DailyTopicsDigest, ReminderTopicsDigest
+from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet \
+                                                    as HeaderFooterBase, \
+                                                    DailyTopicsDigestViewlet,
+                                                    WeeklyTopicsDigestViewlet
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 
 class HeaderFooterViewlet(HeaderFooterBase):
@@ -44,18 +47,29 @@ class HeaderFooterViewlet(HeaderFooterBase):
 ### List Viewlets###
 ###
 
-class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet):
+class EDemTopicsDigestListViewletMixin(object):
+    @property
+    def groupEmail(self):
+        config = getattr(self.context, 'GlobalConfiguration')
+        emailDomain = config.getProperty('emailDomain') 
+        return '%s@%s' % (self.groupInfo.get_id(), emailDomain)
+
+class DailyTopicsDigestListViewlet(DailyTopicsDigestViewlet, 
+                                EDemTopicsDigestListViewletMixin):
 
     def __init__(self, context, request, view, manager):
         super(DailyTopicsDigestListViewlet, self).__init__(context, request,
                                                     view, manager)
         self.__topicsDigest__ = DailyTopicsDigest(self.context, self.siteInfo)
 
-    @property
-    def groupEmail(self):
-        config = getattr(self.context, 'GlobalConfiguration')
-        emailDomain = config.getProperty('emailDomain') 
-        return '%s@%s' % (self.groupInfo.get_id(), emailDomain)
+    
+class ReminderTopicsDigestListViewlet(WeeklyTopicsDigestViewlet, 
+                                EDemTopicsDigestListViewletMixin):
+
+    def __init__(self, context, request, view, manager):
+        super(WeeklyTopicsDigestListViewlet, self).__init__(context, request,
+                                                    view, manager)
+        self.__topicsDigest__ = ReminderTopicsDigest(self.context, self.siteInfo)
 
 ###
 ### Clip Viewlets ###
