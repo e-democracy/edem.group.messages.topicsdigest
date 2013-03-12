@@ -11,6 +11,14 @@
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
+  <browser:page name="gs-group-messages-topicsdigest-weekly.html"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    template="browser/templates/weeklyTopicsDigest-html.pt"
+    class="gs.group.messages.topicsdigest.notifiermessages.WeeklyMessage"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"
+    permission="zope2.View"/>
+
+
   <!-- Viewlet Managers -->
   <browser:viewletManager
     name="edem.DailyTopicsDigestHtmlVM"
