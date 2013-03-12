@@ -11,7 +11,7 @@ log = getLogger('edem.group.messages.topicsdigest.TopicsDigest')
 
 clip_length = 250
 
-class EdemTopicsDigestMixin(object):
+class EDemTopicsDigestMixin(object):
     """ Represents the content of an E-Democracy daily digest.
 
        Dicts in the list provided by topics include the following attributes,
