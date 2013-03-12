@@ -94,6 +94,17 @@
     title="News from E-Democracy"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 
+  <browser:viewlet
+    name="edem.ReminderTopicsDigestNewsHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager=".interfaces.IReminderTopicsDigestHtmlVM"
+    class=".viewlets.HeaderFooterViewlet"
+    template="browser/templates/news-html.pt"
+    weight="30"
+    title="News from E-Democracy"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
   <!-- Clips Viewlets -->
   <browser:viewlet
     name="edem.DailyTopicsDigestClipsHtmlViewlet"
@@ -115,6 +126,17 @@
     template="browser/templates/footer-html.pt"
     weight="50"
     title="Daily Digest Footer in HTML"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+
+  <browser:viewlet
+    name="edem.ReminderTopicsDigestFooterHtmlViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.View"
+    manager=".interfaces.IReminderTopicsDigestHtmlVM"
+    class=".viewlets.HeaderFooterViewlet"
+    template="browser/templates/footer-html.pt"
+    weight="50"
+    title="Reminder Digest Footer in HTML"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 
     <!-- Send All Digests Form -->
