@@ -18,7 +18,7 @@
                     </td>
                     <td style="width: 10px; padding: 0 10px 0 0;"></td>
                     <td> 
-                      <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;">E-Democracy News</h2>
+                      <h2 style="font-size: 1.4em; margin: 10px 0px; line-height: 150%; color: black;" tal:content="python: context.digest_news_title if hasattr(context, 'digest_news_title') else 'E-Democracy News' ">Section Title</h2>
                     </td>
                   </tr>
                   <tr>
