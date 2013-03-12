@@ -37,7 +37,7 @@
                   <tr>
                     <td style="margin: 0; padding: 0 10px 0 0;"></td> <!--Left Margin-->
                     <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
-                      <p style="margin: 0; padding: 0;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupInfo/url">forum home</a> for more.</p>
+                      <p style="margin: 0; padding: 0;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href string:${view/groupInfo/url}?rb=topicsdigest-daily">forum home</a> for more.</p>
                       <p style="margin: 0; padding: 0;">To reply, you must click the topic's subject, the [ read more ] link, or the Read Online button.</p>
                     </td>
                     <td style="margin: 0; padding: 0 0 0 10px;"></td> <!--Right Margin-->
@@ -86,7 +86,7 @@
                           <tr>
                             <td style="width: 5px;"></td>
                             <td style="font-size: 1.1em; line-height: 100%; color: #367da9; text-decoration: none;">
-                              <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href topic/last_post_author/url" tal:content="topic/last_post_author/name">Author Name</a></td>
+                              <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href string:${topic/last_post_author/url}?rb=topicsdigest-daily" tal:content="topic/last_post_author/name">Author Name</a></td>
                               <td style="width: 5px;"></td>
                           </tr>
                         </table>
@@ -100,7 +100,7 @@
                         <table style="margin: 0px;" >
                           <tr>
                             <td style="width: 5px;"></td>
-                            <td style="line-height: 100%;"><strong>Keywords</strong>: <tal:block repeat="keyword topic/keywords"><a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}/s/?g=${view/groupInfo/id}&s=$keyword" tal:content="keyword">keyword</a> </tal:block></td>
+                            <td style="line-height: 100%;"><strong>Keywords</strong>: <tal:block repeat="keyword topic/keywords"><a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}/s/?g=${view/groupInfo/id}&s=$keyword&rb=topicsdigest-daily" tal:content="keyword">keyword</a> </tal:block></td>
                             <td style="width: 5px;"></td>
                           </tr>
                         </table>
