@@ -16,7 +16,7 @@ look and markup differs a fair amount from the mockups.
 ZMI Files and Properties
 ========================
 
-The digests expect two files to exist in a group's context:
+The digests ***requires*** two files to exist in a group's context:
 
 * digest_news.xml
 * digest_news.txt
@@ -24,8 +24,10 @@ The digests expect two files to exist in a group's context:
 These allow a site administrator to edit the content of the E-Democracy News 
 section of the digests.
 
-The digests also make use of one property in a group's context - 
-**digest_news_title** - to set the title for the News section of the digest.
+The digests also makes use of one property in a group's context - 
+**digest_news_title** - to set the title for the News section of the digest. 
+However, this property is not required, and the egg will use the default name
+'E-Democracy News' if this property does not exist.
 
 To be available for all group digests, these files and properties should be
 placed in a site folder. While this has not been verified, it should be
