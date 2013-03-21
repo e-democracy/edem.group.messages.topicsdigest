@@ -16,7 +16,7 @@ look and markup differs a fair amount from the mockups.
 ZMI Files and Properties
 ========================
 
-The digests ***requires*** two files to exist in a group's context:
+The digests **requires** two files to exist in a group's context:
 
 * digest_news.xml
 * digest_news.txt
@@ -50,19 +50,21 @@ The following pages are overridden by this egg:
   * gs-group-messages-topicsdigest-weekly.txt
 
 In the case of html pages, the templates (dailyTopicsDigest-* and 
-weeklyTopicsDigest-*) are where the CSS for the digest is defined. Aside from 
-this, not much else of interest happens in the digest page templates.
+weeklyTopicsDigest-*) are where the embedded CSS for the digest is defined, 
+including the responsive design CSS. Aside from this, not much else of interest
+happens in the digest page templates.
 
 Digest Viewlets
 ==============
 
 The Daily HTML digest use 5 viewlets:
 
-* A 'header' viewlet that displays the group name, membership size, and social media links
-* A 'list' viewlet that displays the list of topics
-* A 'news' viewlet that displays organizational news from E-Democracy
-* A 'clips' viewlet that displays clips from topics
-* A 'footer' viewlet that displays standard help/footer text
+* A **header** viewlet that displays the group name, membership size, and 
+  social media links
+* A **list** viewlet that displays the list of active topics
+* A **news** viewlet that displays organizational news from E-Democracy
+* A **clips** viewlet that displays clips from active topics
+* A **footer** viewlet that displays standard help/footer text
 
 The Reminder HTML Digest uses a similar set of viewlets, but does not use a clips viewlet.
 
