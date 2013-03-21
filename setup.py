@@ -8,8 +8,8 @@ version = get_version()
 setup(name='edem.group.messages.topicsdigest',
     version=version,
     description="Customized version of GroupServer's topics digest for E-Democracy",
-    long_description=open("README.txt").read() + "\n" +
-                      open(os.path.join("docs", "HISTORY.txt")).read(),
+    long_description=open("README.txt", 'r').read() + "\n" +
+                      open(os.path.join("docs", "HISTORY.txt"), 'r').read(),
     classifiers=[
       "Development Status :: 2 - Alpha",
       "Environment :: Web Environment",
