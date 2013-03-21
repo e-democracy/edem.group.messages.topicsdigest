@@ -32,7 +32,7 @@
                          <tr>
                            <td style="padding: 0 3px 0 0; margin: 0px;"></td>
                            <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
-                             <a href="#" tal:attributes="href topic/topic_url" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: #010101; text-decoration: none; display: inline-block; text-align: center;">Read Online</a>
+                             <a href="#" tal:attributes="href string:${topic/topic_url}#posta-bottom" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: #010101; text-decoration: none; display: inline-block; text-align: center;">Read Online</a>
                            </td>
                            <td style="padding: 0 0 0 3px; margin: 0px;"></td>
                          </tr>
