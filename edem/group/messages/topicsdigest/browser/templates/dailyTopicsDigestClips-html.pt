@@ -127,7 +127,7 @@
                               <tr>
                                 <td style="padding: 0 3px 0 0; margin: 0px; width: 3px;"></td>
                                 <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
-                                  <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; color: #010101; text-decoration: none; display: inline-block; text-align: center;" tal:attributes="href string:${topic/topic_url}#posta-bottom">Read Online</a>
+                                  <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; color: #010101; text-decoration: none; display: inline-block; text-align: center;" tal:attributes="href string:${topic/topic_url}#posta-${topic/oldest_new_post_id}">Read Online</a>
                                 </td>
                                 <td style="padding: 0 0 0 3px; margin: 0px; width: 3px;"></td>
                               </tr>

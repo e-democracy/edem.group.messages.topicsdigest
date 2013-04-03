@@ -23,6 +23,7 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
            last_post_more_available - A boolean indicating if there is more
                                       text available from the last post than
                                       is present in the clip
+           oldest_new_post_id = ID of the oldest post made since yesterday
         """
 
     def __init__(self, context, siteInfo):
