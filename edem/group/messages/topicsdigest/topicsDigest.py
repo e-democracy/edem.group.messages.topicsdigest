@@ -58,10 +58,3 @@ class ReminderTopicsDigest(BaseWeeklyTopicsDigest):
     def messageQuery(self):
         retval = DigestQuery()
         return retval
-
-    def __formatTopic__(self, topic):
-        topic = super(ReminderTopicsDigest, self).__formatTopic__(topic)
-        topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-reminder'
-        return topic
-
-

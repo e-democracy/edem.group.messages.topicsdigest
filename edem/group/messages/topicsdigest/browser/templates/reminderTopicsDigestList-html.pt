@@ -1,4 +1,5 @@
-<tal:block define="topics options/topicsDigest/topics | view/topicsDigest/topics | python:[]">
+<tal:block define="topics options/topicsDigest/topics | view/topicsDigest/topics | python:[];
+                   rb_value string:rb=topicsdigest-reminder">
     <table style="margin: 0; padding: 0; width: 100% !important;" border="0" cellpadding="0" cellspacing="0" width="100%"><!--Margin for topics section-->
       <tr>
         <td style="height: 5px; padding: 5px 0 0;"></td>
@@ -22,7 +23,7 @@
                   <h3
                    style="font-size: 1.1em; font-weight: normal; line-height: 120%; color: black; margin: 5px 0 0; padding:0;">
                    <span class="topic_number"
-                    style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span> <a href="#" style="font-weight: normal; text-decoration: none; color: #010101;" tal:attributes="href topic/topic_url" tal:content="topic/topic_subject">Topic Subject</a></h3>
+                    style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span> <a href="#" style="font-weight: normal; text-decoration: none; color: #010101;" tal:attributes="href string:${topic/topic_url}?${rb_value}" tal:content="topic/topic_subject">Topic Subject</a></h3>
                    <div class="topic_buttons" style="display: inline-block; margin:0; padding:0;">
                      <span style="display:inline-block;">
                        <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0"><!-- Button margin -->     
@@ -32,7 +33,7 @@
                          <tr>
                            <td style="padding: 0 3px 0 0; margin: 0px;"></td>
                            <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
-                             <a href="#" tal:attributes="href string:${topic/topic_url}#posta-bottom" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: #010101; text-decoration: none; display: inline-block; text-align: center;">Read Online</a>
+                             <a href="#" tal:attributes="href string:${topic/topic_url}?${rb_value}#posta-bottom" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0;  padding: 0; color: #010101; text-decoration: none; display: inline-block; text-align: center;">Read Online</a>
                            </td>
                            <td style="padding: 0 0 0 3px; margin: 0px;"></td>
                          </tr>
