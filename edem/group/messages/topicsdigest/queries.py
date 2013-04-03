@@ -17,7 +17,7 @@ class DigestQuery(BaseDigestQuery):
         tt = self.topicTable            
         tkt = self.topicKeywordsTable         
         pt = self.postTable                   
-        yesterday = datetime.datetime.now() - datetime.timedelta(day=1)
+        yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
                                               
         #SELECT topic.topic_id, topic.original_subject, topic.last_post_id
         #  topic.last_post_date, topic.num_posts,
