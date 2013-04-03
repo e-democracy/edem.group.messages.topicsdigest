@@ -143,6 +143,18 @@
     title="Daily Topic Clips"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 
+  <!-- Text Body Viewlets -->
+  <browser:viewlet                                                              
+    name="groupserver.WeeklyTopicsDigestTxtViewlet" 
+    for="gs.group.base.interfaces.IGSGroupMarker" 
+    permission="zope2.View" 
+    manager="gs.group.messages.topicsdigest.interfaces.IWeeklyTopicsDigestTxtVM" 
+    class=".viewlets.ReminderTopicsDigestListViewlet" 
+    template="browser/templates/reminderTopicsDigestBody-txt.pt" 
+    weight="20" 
+    title="Weekly Topics Digest"
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/> 
+
   <!-- Footer Viewlets -->
   <browser:viewlet
     name="edem.DailyTopicsDigestFooterHtmlViewlet"
