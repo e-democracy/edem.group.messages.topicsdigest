@@ -47,7 +47,21 @@ class DigestQuery(BaseDigestQuery):
         #  AS last_post_body
                 sa.select([pt.c.body],
                           pt.c.post_id == tt.c.last_post_id
-                          ).as_scalar().label('last_post_body'))
+                          ).as_scalar().label('last_post_body'),
+        #  (SELECT post.post_id
+        #    FROM post
+        #    WHERE (post.topic_id = topic.topic_id)
+        #      AND post.date >= timestamp 'yesterday'
+        #    ORDER BY post.date ASC
+        #    LIMIT 1)
+        #  AS oldest_new_post_id
+                sa.select([pt.c.post_id],
+                          sa.and_(pt.c.date >= yesterday,
+                          pt.c.topic_id == tt.c.topic_id),
+                          order_by = sa.asc(pt.c.date),
+                          limit = 1
+                          ).as_scalar().label('oldest_new_post_id')
+        )
 
         s = sa.select(cols, order_by=sa.desc(tt.c.last_post_date))
         #  FROM topic
@@ -71,6 +85,7 @@ class DigestQuery(BaseDigestQuery):
                   'last_post_date': x['last_post_date'],
                   'last_author_id': x['last_author_id'],
                   'last_post_body': x['last_post_body'],
+                  'oldest_new_post_id': x['oldest_new_post_id'],
                   'num_posts': x['num_posts'],
                   'num_posts_day': x['num_posts_day'],
                   } for x in r]
