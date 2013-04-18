@@ -14,64 +14,86 @@ class DigestQuery(BaseDigestQuery):
         super(DigestQuery, self).__init__()
 
     def topics_sinse_yesterday(self, siteId, groupId):
+        yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
+
+        # SELECT topic.topic_id, topic.site_id, topic.group_id, 
+        #       topic.original_subject, topic.num_posts, topic.first_post_id,
+    	#       last_topic_post.post_id as last_post_id, 
+    	#	    last_topic_post.date as last_post_date,  
+    	#	    last_topic_post.user_id as last_author_id, 
+    	#	    last_topic_post.body as last_post_body, 
+    	#	    COUNT(all_new_topic_posts.*) as num_posts_day,
+    	#	    oldest_new_topic_post.post_id as oldest_new_post_id,
+        #       topic_keywords_table.keywords
+    	#   FROM topic, post as last_topic_post, 
+    	#    	post as all_new_topic_posts, 
+    	#   	post as oldest_new_topic_post
+
         tt = self.topicTable            
         tkt = self.topicKeywordsTable         
         pt = self.postTable                   
-        yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
-                                              
-        #SELECT topic.topic_id, topic.original_subject, topic.last_post_id
-        #  topic.last_post_date, topic.num_posts,
-        cols = (tt.c.topic_id, tt.c.site_id, tt.c.group_id,
-                tt.c.original_subject, tt.c.first_post_id,
-                tt.c.last_post_id, tt.c.num_posts, tt.c.last_post_date,
-                tkt.c.keywords,
-        #  (SELECT COUNT(*)
-        #    FROM post
-        #    WHERE (post.topic_id = topic.topic_id)
-        #      AND post.date >= timestamp 'yesterday')
-        #  AS num_posts_day
-                sa.select([sa.func.count(pt.c.post_id)],
-                          sa.and_(pt.c.date >= yesterday,
-                          pt.c.topic_id == tt.c.topic_id)
-                          ).as_scalar().label('num_posts_day'),
-        #  (SELECT post.user_id
-        #    FROM post
-        #    WHERE post.post_id = topic.last_post_id)
-        #  AS last_author_id
-                sa.select([pt.c.user_id],
-                          pt.c.post_id == tt.c.last_post_id
-                          ).as_scalar().label('last_author_id'),
-        #  (SELECT post.body
-        #    FROM post
-        #    WHERE post.post_id = topic.last_post_id)
-        #  AS last_post_body
-                sa.select([pt.c.body],
-                          pt.c.post_id == tt.c.last_post_id
-                          ).as_scalar().label('last_post_body'),
-        #  (SELECT post.post_id
-        #    FROM post
-        #    WHERE (post.topic_id = topic.topic_id)
-        #      AND post.date >= timestamp 'yesterday'
-        #    ORDER BY post.date ASC
-        #    LIMIT 1)
-        #  AS oldest_new_post_id
-                sa.select([pt.c.post_id],
-                          sa.and_(pt.c.date >= yesterday,
-                          pt.c.topic_id == tt.c.topic_id),
-                          order_by = sa.asc(pt.c.date),
-                          limit = 1
-                          ).as_scalar().label('oldest_new_post_id')
-        )
+        ltpt = pt.alias('last_topic_post')
+        antpt = pt.alias('all_new_topic_posts')
+        ontpt = pt.alias('oldest_new_topic_post')
 
-        s = sa.select(cols, order_by=sa.desc(tt.c.last_post_date))
-        #  FROM topic
-        #  WHERE topic.site_id = 'main'
-        #    AND topic.group_id = 'mpls'
+        cols = (tt.c.topic_id, tt.c.site_id, tt.c.group_id,
+                tt.c.original_subject, tt.c.num_posts, tt.c.first_post_id,
+                ltpt.c.post_id.label('last_post_id'),
+                ltpt.c.date.label('last_post_date'),
+                ltpt.c.user_id.label('last_author_id'),
+                ltpt.c.body.label('last_post_body'),
+                sa.func.count(antpt.c.post_id).label('num_posts_day'),
+                ontpt.c.post_id.label('oldest_new_post_id'),
+                tkt.c.keywords)
+
+        s = sa.select(cols)
+
+        #   WHERE topic.site_id = 'initial_site'
+        #    	AND topic.group_id = 'example_group'
+        #    	AND topic.last_post_date >= timestamp 'yesterday'
         s.append_whereclause(tt.c.site_id == siteId)
         s.append_whereclause(tt.c.group_id == groupId)
-        #    AND topic.last_post_date >= timestamp 'yesterday'
         s.append_whereclause(tt.c.last_post_date >= yesterday)
+	    
+        #	    AND last_topic_post.date in (SELECT MAX(date)
+	    #					FROM post
+	    #					WHERE post.topic_id = topic.topic_id
+	    #					GROUP BY topic.topic_id)
+        s.append_whereclause(ltpt.c.date.in_(sa.select(
+                            sa.func.max(pt.c.date)\
+                        .where(pt.c.topic_id == tt.c.topic_id)\
+                        .group_by(tt.c.topic_id)
+                        )))
+
+        #     	AND all_new_topic_posts.topic_id = topic.topic_id
+	    #   	AND all_new_topic_posts.date >= timestamp 'yesterday'
+	    #   	AND oldest_new_topic_post.topic_id = topic.topic_id
+        s.append_whereclause(antp.c.topic_id == tt.c.topic_id)
+        s.append_whereclause(antp.c.date >= yesterday)
+        s.append_whereclause(ontp.c.topic_id == tt.c.topic_id)
+
+	    #   	AND oldest_new_topic_post.date in ( SELECT MIN(date)
+	    #						FROM post
+	    #						WHERE post.topic_id = topic.topic_id
+	    #							AND post.date >= 'yesterday'
+	    #						GROUP BY topic.topic_id)
+        s.append_whereclause(ontpt.c.date.in_(sa.select(
+                            sa.func.min(pt.c.date)\
+                        .where(pt.c.topic_id == tt.c.topic_id)\
+                        .group_by(tt.c.topic_id)
+                        )))
+
+        #       AND topic.topic_id = topic_keyword_table.topic_id
         s.append_whereclause(tt.c.topic_id == tkt.c.topic_id)
+
+	    #    GROUP BY topic.topic_id, last_topic_post.user_id,
+        #       last_topic_post.body, last_topic_post.post_id, 
+        #       oldest_new_topic_post.post_id
+        s.group_by((tt.c.topic_id, ltpt.c.user_id, ltpt.c.body, ltpt.c.post_id,
+                    ontpt.c.post_id))
+
+        #DEBUG
+        log.info('The daily html query: %s' % str(s))
 
         session = getSession()
         r = session.execute(s)
