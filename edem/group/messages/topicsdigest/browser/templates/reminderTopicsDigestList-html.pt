@@ -43,7 +43,7 @@
                 </div>
                 <div class="topic_help">
                   <h3 style="font-size: 1.1em; font-weight: normal; margin: 10px 0px 0px; padding:0; line-height: 150%; color: black;">Start a New Topic</h3>
-                  <p style="margin-left: 11px; margin-top:5px;">To start a new topic, email <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href python: 'mailto:%s' % view.groupEmail" tal:content="view/groupEmail">Email Address</a>. Be sure to include a subject.</p>
+                  <p style="margin-left: 11px; margin-top:5px;">Email <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href python: 'mailto:%s' % view.groupEmail" tal:content="view/groupEmail">Email Address</a>. Write an informative subject line.</p>
                 </div>
               </td>
               <!--/Topics section-->
