@@ -57,7 +57,7 @@
                     <tr>
                       <td class="excerpt_title" style="border-collapse: collapse; background-color: #aed8e6; padding: 0px 5px;" bgcolor="#aed8e6">
                         <a name="topic" tal:attributes="name string:topic${repeat/topic/number}" ></a>
-                        <h3 style="font-size: 1.1em; font-weight: normal; margin: 10px 0px; line-height: 150%; color: black;">
+                        <h3 style="font-size: 1.2em; font-weight: normal; margin: 10px 0px; line-height: 150%; color: black;">
                           <span class="topic_number" style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span>
                           <a href="#" 
                            style="font-weight: normal; text-decoration: none; color: #010101;" 

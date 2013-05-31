@@ -20,7 +20,7 @@
                 <div class="topic_listing" tal:repeat="topic topics">
                   <a name="listing" style="color: #0645AD; text-decoration: none;" tal:attributes="name string:listing${repeat/topic/number}"></a>
                   <h3
-                   style="font-size: 1.1em; font-weight: normal; line-height: 120%; color: black; margin: 5px 0 0; padding:0;">
+                   style="font-size: 1.2em; font-weight: normal; line-height: 120%; color: black; margin: 5px 0 0; padding:0;">
                    <span class="topic_number"
                     style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span> <a href="#" style="font-weight: normal; text-decoration: none; color: #010101;" tal:attributes="href string:${topic/topic_url}?${rb_value}" tal:content="topic/topic_subject">Topic Subject</a></h3>
                    <div class="topic_buttons" style="display: inline-block; margin:0; padding:0;">
