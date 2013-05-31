@@ -13,7 +13,7 @@
               <td style="margin: 0; padding: 7px 0 0;" colspan="3"></td><!--Top padding-->
             </tr>
             <tr>
-              <td style="margin: 0; padding: 0 7px 0 0;"></td> <!--Left padding-->
+              <td style="margin: 0; padding: 0 12px 0 0;"></td> <!--Left padding-->
               <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
                 <a name="topics_list" style="color: #0645AD; text-decoration: none;"></a>
                 <h2 style="font-size: 1.4em; margin: 10px 0px 5px; line-height: 150%; color: black;"> Today's Active Topics</h2>
@@ -60,7 +60,7 @@
                 </div>
               </td>
               <!--/Topics section-->
-              <td style="margin: 0; padding: 0 0 0 7px;">&nbsp;</td><!--Right padding-->
+              <td style="margin: 0; padding: 0 0 0 12px;">&nbsp;</td><!--Right padding-->
             </tr>
             <tr>
               <td style="margin: 0; padding: 0 0 7px;" colspan="3"></td><!--Bottom padding-->

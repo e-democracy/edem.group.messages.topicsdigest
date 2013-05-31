@@ -21,10 +21,10 @@
                     <td colspan="3" style="margin: 0; padding: 3px 0 0;"></td><!-- Top padding -->
                   </tr>
                   <tr>
-                    <td style="margin: 0; padding: 0 4px 0 0;"></td><!-- Left padding -->
+                    <td style="margin: 0; padding: 0 8px 0 0;"></td><!-- Left padding -->
                     <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content -->
                       <h2 style="font-size: 1.4em; line-height: 150%; margin: 0; color: black; padding: 0;">Topic Clips</h2>
-                    <td style="margin: 0; padding: 0 0 0 4px;"></td><!-- Right padding -->
+                    <td style="margin: 0; padding: 0 0 0 8px;"></td><!-- Right padding -->
                   </tr>
                   <tr>
                     <td colspan="3" style="margin: 0; padding: 0 0 3px;"></td><!-- Bottom padding -->
@@ -36,12 +36,12 @@
                     <td style="margin: 0; padding: 0;" colspan="3"></td><!--Top Margin-->
                   </tr>
                   <tr>
-                    <td style="margin: 0; padding: 0 10px 0 0;"></td> <!--Left Margin-->
+                    <td style="margin: 0; padding: 0 12px 0 0;"></td> <!--Left Margin-->
                     <td style="margin: 0; padding: 0; width: 100% !important;"><!-- Actual Content-->
                       <p style="margin: 0; padding: 0;">Most recent clips only. Visit <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href string:${view/groupInfo/url}?rb=topicsdigest-daily">forum home</a> for more.</p>
                       <p style="margin: 0; padding: 0;">To reply, you must click the topic's subject, the [ read more ] link, or the Read Online button.</p>
                     </td>
-                    <td style="margin: 0; padding: 0 0 0 10px;"></td> <!--Right Margin-->
+                    <td style="margin: 0; padding: 0 0 0 12px;"></td> <!--Right Margin-->
                   </tr>
                   <tr>
                     <td style="margin: 0; padding: 0 0 10px;" colspan="3"></td><!--Bottom Margin-->
@@ -55,7 +55,7 @@
                  tal:repeat="topic topics">
                   <tbody>
                     <tr>
-                      <td class="excerpt_title" style="border-collapse: collapse; background-color: #aed8e6; padding: 0px 5px;" bgcolor="#aed8e6">
+                      <td class="excerpt_title" style="border-collapse: collapse; background-color: #aed8e6; padding: 0px 10px;" bgcolor="#aed8e6">
                         <a name="topic" tal:attributes="name string:topic${repeat/topic/number}" ></a>
                         <h3 style="font-size: 1.2em; font-weight: normal; margin: 10px 0px; line-height: 150%; color: black;">
                           <span class="topic_number" style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span>
@@ -66,7 +66,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 5px 10px; word-break:break-all;" bgcolor="#FFFFFF">
+                      <td class="excerpt_body" style="border-collapse: collapse; padding: 15px 10px 10px; word-break:break-all;" bgcolor="#FFFFFF">
                         <table style="padding: 0px; display:inline-block;" tal:condition="topic/last_post_author/imageUrl" align="left"><!-- Author Img margins -->
                           <tr>
                             <td style="padding: 0px; margin: 0px; font-size:6px;">
