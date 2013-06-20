@@ -6,6 +6,7 @@ from gs.group.messages.topicsdigest.sendDigests import SendAllDigests as Base
 from logging import getLogger
 log = getLogger('edem.group.messages.topicsdigest.sendDigests')
 
+
 class SendAllDigests(Base):
 
 

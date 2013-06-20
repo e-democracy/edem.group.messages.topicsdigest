@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <configure xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
-  xmlns:five="http://namespaces.zope.org/five">
+           xmlns:browser="http://namespaces.zope.org/browser">
 
   <!-- Overridden topic digest message pages -->    
   <browser:page name="gs-group-messages-topicsdigest-daily.html"
@@ -179,12 +178,12 @@
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
 
   <!-- Send All Digests Form -->
-  <browser:page
+  <!--browser:page
     name="gs-group-messages-topicsdigest-send.html"
     for="Products.GSContent.interfaces.IGSSiteFolder"
     class=".sendDigests.SendAllDigests"
     permission="zope2.Public"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/-->
 
 </configure>
 
