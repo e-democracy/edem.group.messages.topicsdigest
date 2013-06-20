@@ -95,19 +95,19 @@
       <td style="background-color: #D4ECF5; width: 100% !important; vertical-align:top;" bgcolor="#D4ECF5" width="100%">
         <table class="body" style="margin: 0; padding: 0; width: 100% !important; height: 100% !important;" border=0 cellpadding=0 cellspacing=0 width="100%">
           <tr>
-            <td colspan="3" style="height: 7px !important;"></td>
+            <td colspan="3" style="height: 12px !important;"></td><!--Top padding-->
           </tr>
           <tr>
-            <td style="width: 7px !important;">&nbsp;</td>
+            <td style="width: 12px !important;">&nbsp;</td><!--Right padding-->
             <td class="body" 
              style="margin: 0px; border-collapse: collapse; padding: 0px; line-height: 150%; font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif; color: black; height: 100% !important;"  
              tal:content="structure provider:edem.ReminderTopicsDigestHtmlVM">
               Content of the daily topics digest in html.
             </td>
-            <td style="width: 7px !important;">&nbsp;</td>
+            <td style="width: 12px !important;">&nbsp;</td><!--Left padding-->
           </tr>
           <tr>
-            <td style="height: 7px !important;"></td>
+            <td style="height: 12px !important;"></td><!--Bottom padding-->
           </tr>
         </table>
       </td>

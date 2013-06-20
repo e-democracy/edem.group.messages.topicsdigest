@@ -23,6 +23,7 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
            last_post_more_available - A boolean indicating if there is more
                                       text available from the last post than
                                       is present in the clip
+           oldest_new_post_id = ID of the oldest post made since yesterday
         """
 
     def __init__(self, context, siteInfo):
@@ -44,7 +45,6 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
             topic['last_post_clip'] = topic['last_post_body']
 
         topic['last_post_clip'] = topic['last_post_clip'].replace('\n', '<br/>')
-        topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-daily'
         return topic
 
 class ReminderTopicsDigest(BaseWeeklyTopicsDigest):
@@ -57,10 +57,3 @@ class ReminderTopicsDigest(BaseWeeklyTopicsDigest):
     def messageQuery(self):
         retval = DigestQuery()
         return retval
-
-    def __formatTopic__(self, topic):
-        topic = super(ReminderTopicsDigest, self).__formatTopic__(topic)
-        topic['topic_url'] = topic['topic_url'] + '?rb=topicsdigest-reminder'
-        return topic
-
-

@@ -16,7 +16,11 @@ look and markup differs a fair amount from the mockups.
 ZMI Files and Properties
 ========================
 
+<<<<<<< HEAD
 The digests expect two files to exist in a group's context:
+=======
+The digests **requires** two files to exist in a group's context:
+>>>>>>> 2ba19a00e8f4440b22e0d4640f6ebe39c87c14b9
 
 * digest_news.xml
 * digest_news.txt
@@ -24,8 +28,15 @@ The digests expect two files to exist in a group's context:
 These allow a site administrator to edit the content of the E-Democracy News 
 section of the digests.
 
+<<<<<<< HEAD
 The digests also make use of one property in a group's context - 
 **digest_news_title** - to set the title for the News section of the digest.
+=======
+The digests also makes use of one property in a group's context - 
+**digest_news_title** - to set the title for the News section of the digest. 
+However, this property is not required, and the egg will use the default name
+'E-Democracy News' if this property does not exist.
+>>>>>>> 2ba19a00e8f4440b22e0d4640f6ebe39c87c14b9
 
 To be available for all group digests, these files and properties should be
 placed in a site folder. While this has not been verified, it should be
@@ -48,19 +59,34 @@ The following pages are overridden by this egg:
   * gs-group-messages-topicsdigest-weekly.txt
 
 In the case of html pages, the templates (dailyTopicsDigest-* and 
+<<<<<<< HEAD
 weeklyTopicsDigest-*) are where the CSS for the digest is defined. Aside from 
 this, not much else of interest happens in the digest page templates.
+=======
+weeklyTopicsDigest-*) are where the embedded CSS for the digest is defined, 
+including the responsive design CSS. Aside from this, not much else of interest
+happens in the digest page templates.
+>>>>>>> 2ba19a00e8f4440b22e0d4640f6ebe39c87c14b9
 
 Digest Viewlets
 ==============
 
 The Daily HTML digest use 5 viewlets:
 
+<<<<<<< HEAD
 * A 'header' viewlet that displays the group name, membership size, and social media links
 * A 'list' viewlet that displays the list of topics
 * A 'news' viewlet that displays organizational news from E-Democracy
 * A 'clips' viewlet that displays clips from topics
 * A 'footer' viewlet that displays standard help/footer text
+=======
+* A **header** viewlet that displays the group name, membership size, and 
+  social media links
+* A **list** viewlet that displays the list of active topics
+* A **news** viewlet that displays organizational news from E-Democracy
+* A **clips** viewlet that displays clips from active topics
+* A **footer** viewlet that displays standard help/footer text
+>>>>>>> 2ba19a00e8f4440b22e0d4640f6ebe39c87c14b9
 
 The Reminder HTML Digest uses a similar set of viewlets, but does not use a clips viewlet.
 
