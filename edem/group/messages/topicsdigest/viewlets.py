@@ -15,7 +15,7 @@ class HeaderFooterViewlet(HeaderFooterBase):
 
     @property
     def groupMembersCount(self):
-        return self.groupInfo.group_members_info.fullMemberCount
+        return self.groupMembersInfo.fullMembersCount
     
     @property
     def groupFacebookPage(self):
