@@ -6,16 +6,19 @@ from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as \
                                                 WeeklyTopicsDigestViewlet
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 
+from logging import getLogger
+log = getLogger('edem.group.messages.topicsdigest.viewlet')
+
 class HeaderFooterViewlet(HeaderFooterBase):
     """Provides properties needed for the E-Dem Digest header """
 
     def __init__(self, context, request, view, manager):
         super(HeaderFooterBase, self).__init__(context, request, view, manager)
-        self.groupMembersInfo = GSGroupMembersInfo(self.groupInfo)
+        self.groupMembersInfo = GSGroupMembersInfo(context)
 
     @property
     def groupMembersCount(self):
-        return self.groupMembersInfo.fullMembersCount
+        return self.groupMembersInfo.fullMemberCount
     
     @property
     def groupFacebookPage(self):
