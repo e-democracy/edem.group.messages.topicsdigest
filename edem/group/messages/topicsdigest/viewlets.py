@@ -6,9 +6,6 @@ from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as \
                                                 WeeklyTopicsDigestViewlet
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 
-from logging import getLogger
-log = getLogger('edem.group.messages.topicsdigest.viewlet')
-
 class HeaderFooterViewlet(HeaderFooterBase):
     """Provides properties needed for the E-Dem Digest header """
 
