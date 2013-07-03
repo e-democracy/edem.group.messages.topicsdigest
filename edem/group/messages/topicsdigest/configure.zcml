@@ -40,7 +40,7 @@
   <browser:viewlet
     name="edem.DailyTopicsDigestHeaderHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/header-html.pt"
@@ -51,7 +51,7 @@
   <browser:viewlet
     name="edem.ReminderTopicsDigestHeaderHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IReminderTopicsDigestHtmlVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/header-html.pt"
@@ -64,7 +64,7 @@
   <browser:viewlet
     name="edem.DailyTopicsDigestListHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class=".viewlets.DailyTopicsDigestListViewlet"
     template="browser/templates/dailyTopicsDigestList-html.pt"
@@ -75,7 +75,7 @@
   <browser:viewlet
     name="edem.ReminderTopicsDigestListHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IReminderTopicsDigestHtmlVM"
     class=".viewlets.ReminderTopicsDigestListViewlet"
     template="browser/templates/reminderTopicsDigestList-html.pt"
@@ -87,7 +87,7 @@
   <browser:viewlet
     name="edem.DailyTopicsDigestNewsHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-html.pt"
@@ -98,7 +98,7 @@
   <browser:viewlet
     name="edem.DailyTopicsDigestNewsTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager="gs.group.messages.topicsdigest.interfaces.IDailyTopicsDigestTxtVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-txt.pt"
@@ -110,7 +110,7 @@
   <browser:viewlet
     name="edem.ReminderTopicsDigestNewsHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IReminderTopicsDigestHtmlVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-html.pt"
@@ -121,7 +121,7 @@
   <browser:viewlet
     name="edem.ReminderTopicsDigestNewsTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager="gs.group.messages.topicsdigest.interfaces.IWeeklyTopicsDigestTxtVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-txt.pt"
@@ -134,7 +134,7 @@
   <browser:viewlet
     name="edem.DailyTopicsDigestClipsHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class=".viewlets.DailyTopicsDigestClipsViewlet"
     template="browser/templates/dailyTopicsDigestClips-html.pt"
@@ -146,7 +146,7 @@
   <browser:viewlet                                                              
     name="groupserver.WeeklyTopicsDigestTxtViewlet" 
     for="gs.group.base.interfaces.IGSGroupMarker" 
-    permission="zope2.View" 
+    permission="zope2.Public" 
     manager="gs.group.messages.topicsdigest.interfaces.IWeeklyTopicsDigestTxtVM" 
     class=".viewlets.ReminderTopicsDigestListViewlet" 
     template="browser/templates/reminderTopicsDigestBody-txt.pt" 
@@ -158,7 +158,7 @@
   <browser:viewlet
     name="edem.DailyTopicsDigestFooterHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IDailyTopicsDigestHtmlVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/footer-html.pt"
@@ -169,21 +169,11 @@
   <browser:viewlet
     name="edem.ReminderTopicsDigestFooterHtmlViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    permission="zope2.View"
+    permission="zope2.Public"
     manager=".interfaces.IReminderTopicsDigestHtmlVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/footer-html.pt"
     weight="50"
     title="Reminder Digest Footer in HTML"
     layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
-
-  <!-- Send All Digests Form -->
-  <!--browser:page
-    name="gs-group-messages-topicsdigest-send.html"
-    for="Products.GSContent.interfaces.IGSSiteFolder"
-    class=".sendDigests.SendAllDigests"
-    permission="zope2.Public"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/-->
-
 </configure>
-
