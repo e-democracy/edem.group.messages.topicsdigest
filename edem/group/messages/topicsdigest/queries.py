@@ -47,7 +47,7 @@ class DigestQuery(BaseDigestQuery):
         #           FROM post
         #           WHERE post.topic_id = topic.topic_id
         #               AND post.date >= timestamp 'now' - interval '1 days')
-
+        #  ORDER BY last_post_date DESC
         tt = self.topicTable            
         tkt = self.topicKeywordsTable         
         pt = self.postTable                   
@@ -55,23 +55,23 @@ class DigestQuery(BaseDigestQuery):
         ontpt = pt.alias('oldest_new_topic_post')
 
         cols = (tt.c.topic_id, tt.c.site_id, tt.c.group_id,
-                tt.c.original_subject, tt.c.num_posts, tt.c.first_post_id,
-                ltpt.c.post_id.label('last_post_id'),
-                ltpt.c.date.label('last_post_date'),
-                ltpt.c.user_id.label('last_author_id'),
-                ltpt.c.body.label('last_post_body'),
-                sa.select([sa.func.count('1')])\
-                    .select_from(pt)\
-                    .where(pt.c.topic_id == tt.c.topic_id)\
-                    .where(pt.c.date >= yesterday)\
-                    .label('num_posts_day'),
-                ontpt.c.post_id.label('oldest_new_post_id'),
-                tkt.c.keywords)
+            tt.c.original_subject, tt.c.num_posts, tt.c.first_post_id,
+            ltpt.c.post_id.label('last_post_id'),
+            ltpt.c.date.label('last_post_date'),
+            ltpt.c.user_id.label('last_author_id'),
+            ltpt.c.body.label('last_post_body'),
+            sa.select([sa.func.count('1')])\
+                .select_from(pt)\
+                .where(pt.c.topic_id == tt.c.topic_id)\
+                .where(pt.c.date >= yesterday)\
+                .label('num_posts_day'),
+            ontpt.c.post_id.label('oldest_new_post_id'),
+            tkt.c.keywords)
 
         s = sa.select(cols)\
             .select_from(tt.join(tkt, tkt.c.topic_id == tt.c.topic_id)\
-                .join(ltpt, ltpt.c.topic_id == tt.c.topic_id)\
-                .join(ontpt, ontpt.c.topic_id == tt.c.topic_id))\
+            .join(ltpt, ltpt.c.topic_id == tt.c.topic_id)\
+            .join(ontpt, ontpt.c.topic_id == tt.c.topic_id))\
             .where(tt.c.site_id == siteId)\
             .where(tt.c.group_id == groupId)\
             .where(tt.c.last_post_date >= yesterday)\
@@ -79,13 +79,11 @@ class DigestQuery(BaseDigestQuery):
                 .where(pt.c.topic_id == tt.c.topic_id))\
             .where(ontpt.c.date == sa.select([sa.func.min(pt.c.date)])\
                 .where(pt.c.topic_id == tt.c.topic_id)\
-                .where(pt.c.date >= yesterday))
-        
-        log.info(s)
-	log.info('Starting to Execute Database Query')
+                .where(pt.c.date >= yesterday))\
+            .order_by(sa.sql.expression.desc(ltpt.c.date))
+
         session = getSession()
         r = session.execute(s)
-	log.info('... Execution Finished')
         retval = [{
               'topic_id': x['topic_id'],
               'subject': x['original_subject'],

@@ -51,8 +51,9 @@ class EDemDailyTopicsDigestViewlet(DailyTopicsDigestViewlet):
 
     @property
     def topicsDigest(self):
-        return self.manager.topicsdigest
-
+        retval = self.manager.topicsDigest
+        assert retval
+        return retval
 ###
 ### List Viewlets###
 ###
