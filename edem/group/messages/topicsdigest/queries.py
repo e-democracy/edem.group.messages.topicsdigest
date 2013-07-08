@@ -82,8 +82,10 @@ class DigestQuery(BaseDigestQuery):
                 .where(pt.c.date >= yesterday))
         
         log.info(s)
+	log.info('Starting to Execute Database Query')
         session = getSession()
         r = session.execute(s)
+	log.info('... Execution Finished')
         retval = [{
               'topic_id': x['topic_id'],
               'subject': x['original_subject'],

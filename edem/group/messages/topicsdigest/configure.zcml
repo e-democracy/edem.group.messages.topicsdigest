@@ -24,7 +24,7 @@
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.View"
     provides=".interfaces.IDailyTopicsDigestHtmlVM"
-    class="gs.viewlet.manager.WeightOrderedViewletManager"
+    class=".managers.DailyTopicsDigestViewletManager"
     template="browser/templates/topicsDigestVM.pt"/>
 
   <browser:viewletManager
