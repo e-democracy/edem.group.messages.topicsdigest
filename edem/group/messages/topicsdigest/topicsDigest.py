@@ -1,15 +1,13 @@
 # coding=utf-8
 
-from queries import DigestQuery
 from zope.cachedescriptors.property import Lazy
+from gs.group.messages.post.postbody import escape_word, markup_uri, markup_www
 from gs.group.messages.topicsdigest.topicsDigest import \
     DailyTopicsDigest as BaseDailyTopicsDigest, \
     WeeklyTopicsDigest as BaseWeeklyTopicsDigest
+from queries import DigestQuery
 
-from logging import getLogger
-log = getLogger('edem.group.messages.topicsdigest.TopicsDigest')
-
-clip_length = 500 
+clip_length = 500
 
 
 class DailyTopicsDigest(BaseDailyTopicsDigest):
@@ -41,17 +39,47 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         if len(topic['last_post_body']) > clip_length:
             topic['last_post_more_available'] = True
             topic['last_post_clip'] = topic['last_post_body'][:clip_length]
-            
+
             # Remove cutoff words
             if not topic['last_post_clip'][-1].isspace():
                 topic['last_post_clip'] = \
                     topic['last_post_clip'].rsplit(None, 1)[0]
+
         else:
             topic['last_post_more_available'] = False
             topic['last_post_clip'] = topic['last_post_body']
 
-        topic['last_post_clip'] = topic['last_post_clip']\
-            .replace('\n', '<br/>')
+        # Markup Links with a loop inspired by
+        # gs.group.messages.post.postbody.markup_email.
+        # HACK: The markup functions in gs.group.messages.post take a
+        # ContentProvider as an argument, but most do not actually reference
+        # it. Since we don't have a ContentProvider here, we'll just exploit
+        # the non-use of the argument.
+        marked_up_clip = ''
+        curr_word = ''
+        def markup_word(curr_word):
+            curr_word = escape_word(curr_word)
+            mu_word = markup_uri(None, curr_word, False, [])
+            if mu_word == curr_word:
+                mu_word = markup_www(None, curr_word, False, [])
+            return mu_word
+
+        for char in topic['last_post_clip']:
+            if char.isspace():
+                if curr_word:
+                    mu_word = markup_word(curr_word)
+                    curr_word = ''
+                    marked_up_clip += mu_word
+                if char == '\n':
+                    char = '<br/>'
+                marked_up_clip += char
+            else:
+                curr_word += char
+        if curr_word:
+            mu_word = markup_word(curr_word)
+            marked_up_clip += mu_word
+
+        topic['last_post_clip'] = marked_up_clip
         return topic
 
 
