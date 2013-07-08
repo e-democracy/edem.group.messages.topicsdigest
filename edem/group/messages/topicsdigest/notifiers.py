@@ -2,6 +2,7 @@
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.topicsdigest.notifiers import \
     DynamicTopicsDigestNotifier as Base
+from message import Message
 from topicsDigest import DailyTopicsDigest, ReminderTopicsDigest
 
 
@@ -22,6 +23,12 @@ class DynamicTopicsDigestNotifier(Base):
                           new_posts=digestStats['new_posts'],
                           new_topics=digestStats['new_topics'],
                           a_subject=a_subject)
+        assert retval
+        return retval
+
+    @Lazy
+    def message(self):
+        retval = Message(self.group)
         assert retval
         return retval
 
