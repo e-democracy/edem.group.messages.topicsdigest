@@ -87,7 +87,7 @@
                           <tr>
                             <td style="width: 5px;"></td>
                             <td style="font-size: 1.1em; line-height: 100%; color: #367da9; text-decoration: none;">
-                              <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href string:${topic/last_post_author/url}?rb=topicsdigest-daily" tal:content="topic/last_post_author/name">Author Name</a></td>
+                              <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}${topic/last_post_author/url}?rb=topicsdigest-daily" tal:content="topic/last_post_author/name">Author Name</a></td>
                               <td style="width: 5px;"></td>
                           </tr>
                         </table>
