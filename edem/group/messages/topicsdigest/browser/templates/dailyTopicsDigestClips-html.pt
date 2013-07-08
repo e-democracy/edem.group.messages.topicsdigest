@@ -71,7 +71,7 @@
                           <tr>
                             <td style="padding: 0px; margin: 0px; font-size:6px;">
                               <img 
-                               tal:attributes="src string:${view/siteInfo/url}${topic/last_post_author/imageUrl}" 
+                               tal:attributes="src string:${view/siteInfo/url}${topic/last_post_author/url}/gs-profile-image/54/72" 
                                style="margin: 0px; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto;"
                                align="left"/>
                             </td>
