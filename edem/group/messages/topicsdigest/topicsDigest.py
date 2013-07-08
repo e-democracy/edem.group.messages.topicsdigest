@@ -9,7 +9,7 @@ from gs.group.messages.topicsdigest.topicsDigest import \
 from logging import getLogger
 log = getLogger('edem.group.messages.topicsdigest.TopicsDigest')
 
-clip_length = 250
+clip_length = 500 
 
 
 class DailyTopicsDigest(BaseDailyTopicsDigest):
@@ -41,6 +41,11 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         if len(topic['last_post_body']) > clip_length:
             topic['last_post_more_available'] = True
             topic['last_post_clip'] = topic['last_post_body'][:clip_length]
+            
+            # Remove cutoff words
+            if not topic['last_post_clip'][-1].isspace():
+                topic['last_post_clip'] = \
+                    topic['last_post_clip'].rsplit(None, 1)[0]
         else:
             topic['last_post_more_available'] = False
             topic['last_post_clip'] = topic['last_post_body']
