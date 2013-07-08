@@ -3,12 +3,13 @@ from zope.component import createObject
 from gs.viewlet.manager import WeightOrderedViewletManager
 from topicsDigest import DailyTopicsDigest
 
+
 class DailyTopicsDigestViewletManager(WeightOrderedViewletManager):
     """Provides the TopicsDigest for viewlets in the Daily TopicsDigest"""
 
     def __init__(self, context, request, view):
         super(WeightOrderedViewletManager, self).__init__(
-		    context, request, view)
+            context, request, view)
         self.siteInfo = createObject('groupserver.SiteInfo', self.context)
         self.__topicsDigest__ = DailyTopicsDigest(self.context, self.siteInfo)
 

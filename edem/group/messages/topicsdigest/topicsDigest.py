@@ -11,11 +11,12 @@ log = getLogger('edem.group.messages.topicsdigest.TopicsDigest')
 
 clip_length = 250
 
+
 class DailyTopicsDigest(BaseDailyTopicsDigest):
     """ Represents the content of an E-Democracy daily digest.
 
        Dicts in the list provided by topics include the following attributes,
-       in addition to the attributes provided by 
+       in addition to the attributes provided by
        gs.group.messages.topicsdigest.DailyTopicsDigest:
            last_post_body - The full text content of the last post in a topic
            last_post_clip - A string of the first X characters of the last post
@@ -44,8 +45,10 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
             topic['last_post_more_available'] = False
             topic['last_post_clip'] = topic['last_post_body']
 
-        topic['last_post_clip'] = topic['last_post_clip'].replace('\n', '<br/>')
+        topic['last_post_clip'] = topic['last_post_clip']\
+            .replace('\n', '<br/>')
         return topic
+
 
 class ReminderTopicsDigest(BaseWeeklyTopicsDigest):
 
