@@ -3,6 +3,7 @@ from topicsDigest import ReminderTopicsDigest
 from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as \
     HeaderFooterBase, DailyTopicsDigestViewlet, WeeklyTopicsDigestViewlet
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
+import datetime as dt
 
 
 class HeaderFooterViewlet(HeaderFooterBase):
@@ -45,6 +46,11 @@ class HeaderFooterViewlet(HeaderFooterBase):
 
         assert retval
         return retval
+
+    @property
+    def today(self):
+        return dt.date.today().isoformat()
+        
 
 
 class EDemDailyTopicsDigestViewlet(DailyTopicsDigestViewlet):
