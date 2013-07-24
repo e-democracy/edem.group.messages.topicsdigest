@@ -105,12 +105,34 @@ class ReminderTopicsDigestListViewlet(WeeklyTopicsDigestViewlet):
             __init__(context, request, view, manager)
         self.__topicsDigest__ = \
             ReminderTopicsDigest(self.context, self.siteInfo)
+        self.groupMembersInfo = GSGroupMembersInfo(context)
 
     @property
     def groupEmail(self):
         config = getattr(self.context, 'GlobalConfiguration')
         emailDomain = config.getProperty('emailDomain')
         return '%s@%s' % (self.groupInfo.get_id(), emailDomain)
+
+    @property
+    def groupMembersCount(self):
+        return self.groupMembersInfo.fullMemberCount
+
+    @property
+    def groupFacebookPage(self):
+        facebookId = self.groupInfo.get_property('facebookId', '')
+        if not facebookId:
+            return None
+        else:
+            return 'https://www.facebook.com/%s' % facebookId
+
+    @property
+    def groupTwitterPage(self):
+        twitterId = self.groupInfo.get_property('twitterId', '')
+        if not twitterId:
+            return None
+        else:
+            return 'https://twitter.com/%s' % twitterId
+
 
 ###
 ### Clip Viewlets ###
