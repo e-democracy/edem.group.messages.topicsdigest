@@ -101,6 +101,6 @@ set to a value starting with 'topicsdigest'. The value will usually include
 
 The rb parameter is also appended to the E-Democracy logo URL. In this case,
 rb is set using the format 'topicsdigest-<groupID>-YYYY-MM-DD'. Using this
-format, a search can be done via Google Analytics to see roughly how many
-topicsdigest emails are opened per group per day (assuming email clients load
-images).
+format, a search can be done on the access logs of e-democracy.org to see 
+roughly how many topicsdigest emails are opened per group per day (assuming 
+email clients load images).
