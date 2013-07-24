@@ -89,3 +89,18 @@ Text Digest Differences
 This egg mostly reuses the text digests that are defined by 
 gs.group.messages.topicsdigest. The one significant difference is that a News
 viewlet is inserted by this egg.
+
+Tracking Parameter
+==================
+
+All links from the HTML topicsdigests to forums.e-democracy.org include a 
+parameter used to track how much traffic arrives at forums.e-democracy.org via
+the topicsdigests. This parameter - rb (for 'Referred By') - will always be
+set to a value starting with 'topicsdigest'. The value will usually include 
+'-daily' or '-reminder'.
+
+The rb parameter is also appended to the E-Democracy logo URL. In this case,
+rb is set using the format 'topicsdigest-<groupID>-YYYY-MM-DD'. Using this
+format, a search can be done via Google Analytics to see roughly how many
+topicsdigest emails are opened per group per day (assuming email clients load
+images).
