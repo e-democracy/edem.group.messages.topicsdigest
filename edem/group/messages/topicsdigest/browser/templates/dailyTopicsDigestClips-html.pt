@@ -86,8 +86,8 @@
                         <table class="excerpt_byline" style="margin: 0px;" >
                           <tr>
                             <td style="width: 5px;"></td>
-                            <td style="font-size: 1.1em; line-height: 100%; color: #367da9; text-decoration: none;">
-                              <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="font-size: 1.1em; color: #367da9; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}${topic/last_post_author/url}?rb=topicsdigest-daily" tal:content="topic/last_post_author/name">Author Name</a></td>
+                            <td style="line-height: 100%; text-decoration: none;">
+                              <strong>Last Post</strong>: At <tal:block content="topic/last_post_date_str">Time of Post</tal:block> by <a href="#" style="color: #000000; text-decoration: none;" tal:attributes="href string:${view/siteInfo/url}${topic/last_post_author/url}?rb=topicsdigest-daily" tal:content="topic/last_post_author/name">Author Name</a></td>
                               <td style="width: 5px;"></td>
                           </tr>
                         </table>
@@ -106,20 +106,6 @@
                           </tr>
                         </table>
                         <div class="excerpt_buttons">
-                          <span style="display:inline-block;"><!-- Button container -->
-                            <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0" align="left"><!-- Button margin -->
-                              <tr>
-                                <td style="margin: 0px; padding: 7px 0 0;" colspan="3"></td>
-                              </tr>
-                              <tr>
-                                <td style="padding: 0 3px 0 0; margin: 0px; width: 3px;"></td>
-                                <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
-                                  <a href="#topics_list" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; color: #010101; text-decoration: none; display: inline-block; text-align: center;">Go to Top</a>
-                                </td>
-                                <td style="padding: 0 0 0 3px; margin: 0px; width: 3px;"></td>
-                              </tr>
-                            </table><!-- /Button margin -->
-                          </span><!-- /Button container -->
                           <span style="display:inline-block;"><!-- Button container -->
                             <table style="display:inline-block; padding: 0px; margin: 0px;" border="0" cellpadding="0" cellspacing="0" align="left"><!-- Button margin -->
                               <tr>
