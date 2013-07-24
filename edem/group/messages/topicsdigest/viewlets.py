@@ -68,12 +68,34 @@ class DailyTopicsDigestListViewlet(EDemDailyTopicsDigestViewlet):
     def __init__(self, context, request, view, manager):
         super(DailyTopicsDigestListViewlet, self).\
             __init__(context, request, view, manager)
+        self.groupMembersInfo = GSGroupMembersInfo(context)
 
     @property
     def groupEmail(self):
         config = getattr(self.context, 'GlobalConfiguration')
         emailDomain = config.getProperty('emailDomain')
         return '%s@%s' % (self.groupInfo.get_id(), emailDomain)
+
+    @property
+    def groupMembersCount(self):
+        return self.groupMembersInfo.fullMemberCount
+
+    @property
+    def groupFacebookPage(self):
+        facebookId = self.groupInfo.get_property('facebookId', '')
+        if not facebookId:
+            return None
+        else:
+            return 'https://www.facebook.com/%s' % facebookId
+
+    @property
+    def groupTwitterPage(self):
+        twitterId = self.groupInfo.get_property('twitterId', '')
+        if not twitterId:
+            return None
+        else:
+            return 'https://twitter.com/%s' % twitterId
+
 
 
 class ReminderTopicsDigestListViewlet(WeeklyTopicsDigestViewlet):
