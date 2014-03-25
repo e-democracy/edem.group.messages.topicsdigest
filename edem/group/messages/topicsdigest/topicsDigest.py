@@ -1,11 +1,11 @@
 # coding=utf-8
-
+from __future__ import absolute_imports, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.post.postbody import escape_word, markup_uri, markup_www
 from gs.group.messages.topicsdigest.topicsDigest import \
     DailyTopicsDigest as BaseDailyTopicsDigest, \
     WeeklyTopicsDigest as BaseWeeklyTopicsDigest
-from queries import DigestQuery
+from .queries import DigestQuery
 
 clip_length = 500
 
@@ -57,6 +57,7 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         # the non-use of the argument.
         marked_up_clip = ''
         curr_word = ''
+
         def markup_word(curr_word):
             curr_word = escape_word(curr_word)
             mu_word = markup_uri(None, curr_word, False, [])
