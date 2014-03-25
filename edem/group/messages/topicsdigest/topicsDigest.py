@@ -1,5 +1,5 @@
 # coding=utf-8
-from __future__ import absolute_imports, unicode_literals
+from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.post.postbody import escape_word, markup_uri, markup_www
 from gs.group.messages.topicsdigest.topicsDigest import \
