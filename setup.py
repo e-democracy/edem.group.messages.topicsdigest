@@ -5,17 +5,18 @@ from version import get_version
 
 version = get_version()
 
-setup(name='edem.group.messages.topicsdigest',
+setup(
+    name='edem.group.messages.topicsdigest',
     version=version,
     description="Customized version of GroupServer's topics digest for E-Democracy",
     long_description=open("README.txt", 'r').read() + "\n" +
-                      open(os.path.join("docs", "HISTORY.txt"), 'r').read(),
+        open(os.path.join("docs", "HISTORY.txt"), 'r').read(),
     classifiers=[
       "Development Status :: 4 - Beta",
       "Environment :: Web Environment",
       "Framework :: Zope2",
       "Intended Audience :: Developers",
-      "License :: OSI Approved :: GNU General Public License v3 (GPLv3)", 
+      "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
       "Natural Language :: English",
       "Operating System :: POSIX :: Linux"
       "Programming Language :: Python",
@@ -27,14 +28,14 @@ setup(name='edem.group.messages.topicsdigest',
     url='http://forums.e-democracy.org/',
     license='other',
     packages=find_packages(exclude=['ez_setup']),
-    namespace_packages=['edem', 'edem.group', 'edem.group.messages'], 
+    namespace_packages=['edem', 'edem.group', 'edem.group.messages'],
     include_package_data=True,
     zip_safe=True,
     install_requires=[
         'setuptools',
         'sqlalchemy',
         'zope.cachedescriptors',
-	'zope.component',
+        'zope.component',
         'zope.formlib',
         'zope.viewlet',
         'gs.database',
@@ -43,11 +44,9 @@ setup(name='edem.group.messages.topicsdigest',
         'Products.GSContent',
         'Products.GSGroupMember',
         'gs.skin.ogn.edem',
-        'gs.group.messages.topicsdigest',
+        'gs.group.messages.topic.digest.base',
         # -*- Extra requirements: -*-
     ],
     entry_points="""
     # -*- Entry points: -*-
     """,)
-
-
