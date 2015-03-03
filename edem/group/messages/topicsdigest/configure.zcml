@@ -7,15 +7,16 @@
     for="gs.group.base.interfaces.IGSGroupMarker"
     template="browser/templates/dailyTopicsDigest-html.pt"
     class="gs.group.messages.topicsdigest.notifiermessages.DailyMessage"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"
+    layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
   <browser:page name="gs-group-messages-topicsdigest-weekly.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
     template="browser/templates/reminderTopicsDigest-html.pt"
     class="gs.group.messages.topicsdigest.notifiermessages.WeeklyMessage"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"
+    layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
+
 
 
   <!-- Viewlet Managers -->
@@ -46,7 +47,7 @@
     template="browser/templates/header-html.pt"
     weight="10"
     title="Daily Digest Header in HTML"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <browser:viewlet
     name="edem.ReminderTopicsDigestHeaderHtmlViewlet"
@@ -57,7 +58,8 @@
     template="browser/templates/header-html.pt"
     weight="10"
     title="Reminder Digest Header in HTML"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
+
 
 
   <!-- List Viewlets -->
@@ -70,7 +72,7 @@
     template="browser/templates/dailyTopicsDigestList-html.pt"
     weight="20"
     title="Daily Topics List"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <browser:viewlet
     name="edem.ReminderTopicsDigestListHtmlViewlet"
@@ -81,7 +83,8 @@
     template="browser/templates/reminderTopicsDigestList-html.pt"
     weight="20"
     title="Reminder Topics List"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
+
 
   <!-- News Viewlets -->
   <browser:viewlet
@@ -93,7 +96,7 @@
     template="browser/templates/news-html.pt"
     weight="30"
     title="News from E-Democracy"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <browser:viewlet
     name="edem.DailyTopicsDigestNewsTxtViewlet"
@@ -104,8 +107,7 @@
     template="browser/templates/news-txt.pt"
     weight="25"
     title="News from E-Democracy"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
-
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <browser:viewlet
     name="edem.ReminderTopicsDigestNewsHtmlViewlet"
@@ -116,7 +118,7 @@
     template="browser/templates/news-html.pt"
     weight="30"
     title="News from E-Democracy"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <browser:viewlet
     name="edem.ReminderTopicsDigestNewsTxtViewlet"
@@ -127,7 +129,7 @@
     template="browser/templates/news-txt.pt"
     weight="25"
     title="News from E-Democracy"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
 
   <!-- Clips Viewlets -->
@@ -140,7 +142,7 @@
     template="browser/templates/dailyTopicsDigestClips-html.pt"
     weight="40"
     title="Daily Topic Clips"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <!-- Text Body Viewlets -->
   <browser:viewlet                                                              
@@ -152,7 +154,7 @@
     template="browser/templates/reminderTopicsDigestBody-txt.pt" 
     weight="20" 
     title="Weekly Topics Digest"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/> 
+    layer="edem.skin.interfaces.IEDemLayer"/> 
 
   <!-- Footer Viewlets -->
   <browser:viewlet
@@ -164,7 +166,7 @@
     template="browser/templates/footer-html.pt"
     weight="50"
     title="Daily Digest Footer in HTML"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <browser:viewlet
     name="edem.ReminderTopicsDigestFooterHtmlViewlet"
@@ -175,7 +177,8 @@
     template="browser/templates/footer-html.pt"
     weight="50"
     title="Reminder Digest Footer in HTML"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
+
 
   <!-- Send All Digests Form-->
   <browser:page
@@ -183,5 +186,6 @@
     for="Products.GSContent.interfaces.IGSSiteFolder"
     class=".sendDigests.SendAllDigests"
     permission="zope2.Public"
-    layer="gs.skin.ogn.edem.interfaces.IEDemLayer"/>
+    layer="edem.skin.interfaces.IEDemLayer"/>
+
 </configure>

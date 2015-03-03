@@ -33,6 +33,8 @@ setup(
     zip_safe=True,
     install_requires=[
         'setuptools',
+        'edem.skin',
+        'gs.group.messages.topicsdigest',
         'sqlalchemy',
         'zope.cachedescriptors',
         'zope.component',
@@ -40,11 +42,10 @@ setup(
         'zope.viewlet',
         'gs.database',
         'gs.group.base',
+        'gs.group.messages.topic.digest.base',
         'gs.viewlet',
         'Products.GSContent',
         'Products.GSGroupMember',
-        'gs.skin.ogn.edem',
-        'gs.group.messages.topic.digest.base',
         # -*- Extra requirements: -*-
     ],
     entry_points="""

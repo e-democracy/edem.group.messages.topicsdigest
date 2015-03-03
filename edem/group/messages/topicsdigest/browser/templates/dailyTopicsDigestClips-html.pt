@@ -61,7 +61,7 @@
                           <span class="topic_number" style="color: #606060;"><tal:block content="repeat/topic/number"/>.</span>
                           <a href="#" 
                            style="font-weight: normal; text-decoration: none; color: #010101;" 
-                           tal:attributes="href string:${topic/topic_url}?${rb_value}#posta-top" tal:content="topic/topic_subject">Topic Subject</a>
+                           tal:attributes="href string:${topic/topic_url}?${rb_value}#post-top" tal:content="topic/topic_subject">Topic Subject</a>
                         </h3>
                       </td>
                     </tr>
@@ -78,7 +78,7 @@
                             <td style="width: 10px; padding: 0px; margin: 0px;"></td>
                           </tr>
                         </table><!-- /Author Img margins -->
-                        <p style="margin: 0px;"><tal:block content="structure topic/last_post_clip">Post Clip</tal:block> [ <a href="#" tal:attributes="href string:${topic/topic_url}?${rb_value}#posta-bottom" style="color: #0645AD; text-decoration: none;"><tal:block condition="topic/last_post_more_available">read more</tal:block><tal:block condition="not:topic/last_post_more_available">read online</tal:block></a>  ]</p>
+                        <p style="margin: 0px;"><tal:block content="structure topic/last_post_clip">Post Clip</tal:block> [ <a href="#" tal:attributes="href string:${topic/topic_url}?${rb_value}#post-bottom" style="color: #0645AD; text-decoration: none;"><tal:block condition="topic/last_post_more_available">read more</tal:block><tal:block condition="not:topic/last_post_more_available">read online</tal:block></a>  ]</p>
                       </td>
                     </tr>
                     <tr>
@@ -114,7 +114,7 @@
                               <tr>
                                 <td style="padding: 0 3px 0 0; margin: 0px; width: 3px;"></td>
                                 <td style="background-color: #D4ECF5; border: 1px solid #003366; padding: 6px 9px;">
-                                  <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; color: #010101; text-decoration: none; display: inline-block; text-align: center;" tal:attributes="href string:${topic/topic_url}?${rb_value}#posta-${topic/oldest_new_post_id}">Read Online</a>
+                                  <a href="#" class="button" style="max-width: 120px; font-size: 1em; font-weight: bold; margin: 0px; color: #010101; text-decoration: none; display: inline-block; text-align: center;" tal:attributes="href string:${topic/topic_url}?${rb_value}#post-${topic/oldest_new_post_id}">Read Online</a>
                                 </td>
                                 <td style="padding: 0 0 0 3px; margin: 0px; width: 3px;"></td>
                               </tr>

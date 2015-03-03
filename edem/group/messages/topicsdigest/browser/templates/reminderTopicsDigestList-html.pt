@@ -39,12 +39,12 @@
                     <tr>
                       <td style="margin: 0; padding: 0 5px 0 0;"></td> <!--Left padding-->
                       <td style="margin: 0; padding: 0;" tal:condition="view/groupFacebookPage | nothing"><!-- Actual Content-->
-                            <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupFacebookPage"><img alt="Follow on Facebook" class="social_media_icon" style="margin: 0; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto; vertical-align: middle;" src="http://e-democracy.org/images/icons/facebook-24x24.png" tal:attributes="alt string:Follow ${view/groupInfo/name} on Facebook"/></a>
+                            <a href="#" style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupFacebookPage"><img alt="[fb]" class="social_media_icon" style="margin: 0; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto; vertical-align: middle;" src="http://e-democracy.org/images/icons/facebook-24x24.png" /></a>
                       </td>
                       <td style="margin: 0; padding: 0 0 0 5px;"></td> <!--Right padding-->
                       <td style="margin: 0; padding: 0 5px 0 0;"></td> <!--Left padding-->
                       <td style="margin: 0; padding: 0;" tal:condition="view/groupTwitterPage | nothing"><!-- Actual Content-->
-                        <a href="#"  style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupTwitterPage"><img alt="Follow on Twitter" class="social_media_icon" style="margin: 0; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto; vertical-align: middle;" src="http://e-democracy.org/images/icons/twitter-24x24.png" tal:attributes="alt string:Follow ${view/groupInfo/name} on Twitter"/></a>
+                        <a href="#"  style="color: #0645AD; text-decoration: none;" tal:attributes="href view/groupTwitterPage"><img alt="[tw]" class="social_media_icon" style="margin: 0; line-height: 100%; outline: none; border: 0; text-decoration: none; height: auto; vertical-align: middle;" src="http://e-democracy.org/images/icons/twitter-24x24.png" /></a>
                       </td>
                       <td style="margin: 0; padding: 0 0 0 5px;"></td> <!--Right padding-->
                     </tr>

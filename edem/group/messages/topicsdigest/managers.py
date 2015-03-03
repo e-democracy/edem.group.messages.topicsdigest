@@ -1,7 +1,8 @@
 # coding=utf-8
+from __future__ import absolute_import, unicode_literals
 from zope.component import createObject
 from gs.viewlet.manager import WeightOrderedViewletManager
-from topicsDigest import DailyTopicsDigest
+from .topicsDigest import DailyTopicsDigest
 
 
 class DailyTopicsDigestViewletManager(WeightOrderedViewletManager):

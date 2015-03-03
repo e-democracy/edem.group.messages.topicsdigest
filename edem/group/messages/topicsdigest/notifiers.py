@@ -1,9 +1,10 @@
 # coding=utf-8
+from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.topicsdigest.notifiers import \
     DynamicTopicsDigestNotifier as Base
-from message import Message
-from topicsDigest import DailyTopicsDigest, ReminderTopicsDigest
+from .message import Message
+from .topicsDigest import DailyTopicsDigest, ReminderTopicsDigest
 
 
 class DynamicTopicsDigestNotifier(Base):
