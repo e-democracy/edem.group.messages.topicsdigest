@@ -1,7 +1,7 @@
 # coding=utf-8
 from __future__ import absolute_import, unicode_literals
 import datetime as dt
-from gs.group.messages.topicsdigest.viewlets import HeaderFooterViewlet as \
+from gs.group.messages.topic.digest.base.viewlets import HeaderFooterViewlet as \
     HeaderFooterBase, DailyTopicsDigestViewlet, WeeklyTopicsDigestViewlet
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 from .topicsDigest import ReminderTopicsDigest
@@ -51,7 +51,7 @@ class HeaderFooterViewlet(HeaderFooterBase):
     @property
     def today(self):
         return dt.date.today().isoformat()
-        
+
 
 
 class EDemDailyTopicsDigestViewlet(DailyTopicsDigestViewlet):

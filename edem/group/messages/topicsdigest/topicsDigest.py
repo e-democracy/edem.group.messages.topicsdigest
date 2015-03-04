@@ -2,7 +2,7 @@
 from __future__ import absolute_import, unicode_literals
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.post.postbody import escape_word, markup_uri, markup_www
-from gs.group.messages.topicsdigest.topicsDigest import \
+from gs.group.messages.topic.digest.base.topicsDigest import \
     DailyTopicsDigest as BaseDailyTopicsDigest, \
     WeeklyTopicsDigest as BaseWeeklyTopicsDigest
 from .queries import DigestQuery

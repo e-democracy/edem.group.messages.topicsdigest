@@ -1,7 +1,8 @@
 # coding=utf-8
 from __future__ import absolute_import, unicode_literals
 from zope.formlib import form
-from gs.group.messages.topicsdigest.sendDigests import SendAllDigests as Base
+from gs.group.messages.topic.digest.base.sendDigests import SendAllDigests \
+    as Base
 from .notifiers import DynamicTopicsDigestNotifier
 
 from logging import getLogger

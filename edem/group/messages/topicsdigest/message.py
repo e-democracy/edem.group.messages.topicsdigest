@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-from gs.group.messages.topicsdigest.message import Message as Base
+from gs.group.messages.topic.digest.base.message import Message as Base
 
 
 class Message(Base):

@@ -2,18 +2,18 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser">
 
-  <!-- Overridden topic digest message pages -->    
+  <!-- Overridden topic digest message pages -->
   <browser:page name="gs-group-messages-topicsdigest-daily.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
     template="browser/templates/dailyTopicsDigest-html.pt"
-    class="gs.group.messages.topicsdigest.notifiermessages.DailyMessage"
+    class="gs.group.messages.topic.digest.base.notifiermessages.DailyMessage"
     layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
   <browser:page name="gs-group-messages-topicsdigest-weekly.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
     template="browser/templates/reminderTopicsDigest-html.pt"
-    class="gs.group.messages.topicsdigest.notifiermessages.WeeklyMessage"
+    class="gs.group.messages.topic.digest.base.notifiermessages.WeeklyMessage"
     layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
@@ -102,7 +102,7 @@
     name="edem.DailyTopicsDigestNewsTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.Public"
-    manager="gs.group.messages.topicsdigest.interfaces.IDailyTopicsDigestTxtVM"
+    manager="gs.group.messages.topic.digest.base.interfaces.IDailyTopicsDigestTxtVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-txt.pt"
     weight="25"
@@ -124,7 +124,7 @@
     name="edem.ReminderTopicsDigestNewsTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.Public"
-    manager="gs.group.messages.topicsdigest.interfaces.IWeeklyTopicsDigestTxtVM"
+    manager="gs.group.messages.topic.digest.base.interfaces.IWeeklyTopicsDigestTxtVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-txt.pt"
     weight="25"
@@ -145,16 +145,16 @@
     layer="edem.skin.interfaces.IEDemLayer"/>
 
   <!-- Text Body Viewlets -->
-  <browser:viewlet                                                              
-    name="groupserver.WeeklyTopicsDigestTxtViewlet" 
-    for="gs.group.base.interfaces.IGSGroupMarker" 
-    permission="zope2.Public" 
-    manager="gs.group.messages.topicsdigest.interfaces.IWeeklyTopicsDigestTxtVM" 
-    class=".viewlets.ReminderTopicsDigestListViewlet" 
-    template="browser/templates/reminderTopicsDigestBody-txt.pt" 
-    weight="20" 
+  <browser:viewlet
+    name="groupserver.WeeklyTopicsDigestTxtViewlet"
+    for="gs.group.base.interfaces.IGSGroupMarker"
+    permission="zope2.Public"
+    manager="gs.group.messages.topic.digest.base.interfaces.IWeeklyTopicsDigestTxtVM"
+    class=".viewlets.ReminderTopicsDigestListViewlet"
+    template="browser/templates/reminderTopicsDigestBody-txt.pt"
+    weight="20"
     title="Weekly Topics Digest"
-    layer="edem.skin.interfaces.IEDemLayer"/> 
+    layer="edem.skin.interfaces.IEDemLayer"/>
 
   <!-- Footer Viewlets -->
   <browser:viewlet
