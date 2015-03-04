@@ -34,7 +34,6 @@ setup(
     install_requires=[
         'setuptools',
         'edem.skin',
-        'gs.group.messages.topicsdigest',
         'sqlalchemy',
         'zope.cachedescriptors',
         'zope.component',
