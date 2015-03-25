@@ -1,8 +1,12 @@
 # coding=utf-8
 from __future__ import absolute_import, unicode_literals
 import datetime as dt
-from gs.group.messages.topic.digest.base.viewlets import HeaderFooterViewlet as \
-    HeaderFooterBase, DailyTopicsDigestViewlet, WeeklyTopicsDigestViewlet
+from gs.group.messages.topic.digest.base import (
+    HeaderFooterViewlet as HeaderFooterBase)
+from gs.group.messages.topic.digest.daily.viewlets import (
+    DailyTopicsDigestViewlet)
+from gs.group.messages.topic.digest.weekly.viewlets  import (
+    WeeklyTopicsDigestViewlet)
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 from .topicsDigest import ReminderTopicsDigest
 

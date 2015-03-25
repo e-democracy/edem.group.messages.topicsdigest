@@ -6,14 +6,14 @@
   <browser:page name="gs-group-messages-topicsdigest-daily.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
     template="browser/templates/dailyTopicsDigest-html.pt"
-    class="gs.group.messages.topic.digest.base.notifiermessages.DailyMessage"
+    class="gs.group.messages.topic.digest.daily.notifiermessages.DailyMessage"
     layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
   <browser:page name="gs-group-messages-topicsdigest-weekly.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
     template="browser/templates/reminderTopicsDigest-html.pt"
-    class="gs.group.messages.topic.digest.base.notifiermessages.WeeklyMessage"
+    class="gs.group.messages.topic.digest.weekly.notifiermessages.WeeklyMessage"
     layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
@@ -102,7 +102,7 @@
     name="edem.DailyTopicsDigestNewsTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.Public"
-    manager="gs.group.messages.topic.digest.base.interfaces.IDailyTopicsDigestTxtVM"
+    manager="gs.group.messages.topic.digest.daily.interfaces.IDailyTopicsDigestTxtVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-txt.pt"
     weight="25"
@@ -124,7 +124,7 @@
     name="edem.ReminderTopicsDigestNewsTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.Public"
-    manager="gs.group.messages.topic.digest.base.interfaces.IWeeklyTopicsDigestTxtVM"
+    manager="gs.group.messages.topic.digest.weekly.interfaces.IWeeklyTopicsDigestTxtVM"
     class=".viewlets.HeaderFooterViewlet"
     template="browser/templates/news-txt.pt"
     weight="25"
@@ -149,7 +149,7 @@
     name="groupserver.WeeklyTopicsDigestTxtViewlet"
     for="gs.group.base.interfaces.IGSGroupMarker"
     permission="zope2.Public"
-    manager="gs.group.messages.topic.digest.base.interfaces.IWeeklyTopicsDigestTxtVM"
+    manager="gs.group.messages.topic.digest.weekly.interfaces.IWeeklyTopicsDigestTxtVM"
     class=".viewlets.ReminderTopicsDigestListViewlet"
     template="browser/templates/reminderTopicsDigestBody-txt.pt"
     weight="20"
