@@ -10,21 +10,21 @@
     <style>
         /* Borrowing some styling from Mail Chimp: https://github.com/mailchimp/Email-Blueprints/blob/master/templates/mobile-basicmobile.html*/
         /***
-         * Client-specific Styles 
+         * Client-specific Styles
          ***/
         #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
         body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
         .ExternalClass * {line-height: 100%} /* Undo Hotmail's setting of line-height*/
         h2,h2 a,h2 a:visited,h3,h3 a,h3 a:visited,h4,h5,h6,.t_cht {color:#000 !important} /* Undo Hotmail's Green headings */
-        table {border-collapse: collapse;} 
+        table {border-collapse: collapse;}
         table td { border-collapse: collapse; }
-        p {margin-bottom: 0;} /*Overriding Hotmail's embedded CSS*/ 
+        p {margin-bottom: 0;} /*Overriding Hotmail's embedded CSS*/
         body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
-	/* Undo Yahoo's reformatted links */	
-	span.yshortcuts, a span {color:#000}
-  	span.yshortcuts:hover, 
-  	span.yshortcuts:active,
-  	span.yshortcuts:focus {text-decoration:none; color:#000; background-color:none; border:none} 
+        /* Undo Yahoo's reformatted links */
+        span.yshortcuts, a span {color:#000}
+        span.yshortcuts:hover,
+        span.yshortcuts:active,
+        span.yshortcuts:focus {text-decoration:none; color:#000; background-color:none; border:none}
 
         /***
          * General body styling
@@ -99,8 +99,8 @@
           </tr>
           <tr>
             <td style="width: 12px !important;">&nbsp;</td><!--Right padding-->
-            <td class="body" 
-             style="margin: 0px; border-collapse: collapse; padding: 0px; line-height: 150%; font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif; color: black; height: 100% !important;"  
+            <td class="body"
+             style="margin: 0px; border-collapse: collapse; padding: 0px; line-height: 150%; font-family: Trebuchet,'Trebuchet MS',arial,helvetica,clean,sans-serif; color: black; height: 100% !important;"
              tal:content="structure provider:edem.ReminderTopicsDigestHtmlVM">
               Content of the daily topics digest in html.
             </td>

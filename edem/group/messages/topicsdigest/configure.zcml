@@ -3,21 +3,21 @@
            xmlns:browser="http://namespaces.zope.org/browser">
 
   <!-- Overridden topic digest message pages -->
-  <browser:page name="gs-group-messages-topicsdigest-daily.html"
+  <browser:page
+    name="gs-group-messages-topic-digest-daily.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
+    layer="edem.skin.interfaces.IEDemLayer"
+    class=".notifiermessages.DailyMessage"
     template="browser/templates/dailyTopicsDigest-html.pt"
-    class="gs.group.messages.topic.digest.daily.notifiermessages.DailyMessage"
-    layer="edem.skin.interfaces.IEDemLayer"
     permission="zope2.View"/>
 
-  <browser:page name="gs-group-messages-topicsdigest-weekly.html"
+  <browser:page
+    name="gs-group-messages-topic-digest-weekly.html"
     for="gs.group.base.interfaces.IGSGroupMarker"
-    template="browser/templates/reminderTopicsDigest-html.pt"
-    class="gs.group.messages.topic.digest.weekly.notifiermessages.WeeklyMessage"
     layer="edem.skin.interfaces.IEDemLayer"
+    class=".notifiermessages.WeeklyMessage"
+    template="browser/templates/reminderTopicsDigest-html.pt"
     permission="zope2.View"/>
-
-
 
   <!-- Viewlet Managers -->
   <browser:viewletManager

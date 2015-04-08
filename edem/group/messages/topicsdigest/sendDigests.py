@@ -1,9 +1,9 @@
 # coding=utf-8
 from __future__ import absolute_import, unicode_literals
 from zope.formlib import form
-from gs.group.messages.topic.digest.base.sendDigests import SendAllDigests \
+from gs.group.messages.topic.digest.base.sendDigests import SendDigest \
     as Base
-from .notifiers import DynamicTopicsDigestNotifier
+#from .notifiers import DynamicTopicsDigestNotifier
 
 from logging import getLogger
 log = getLogger('edem.group.messages.topicsdigest.sendDigests')
@@ -17,8 +17,9 @@ class SendAllDigests(Base):
 
         for site in self.sites:
             for group in self.groups_for_site(site):
-                tdn = DynamicTopicsDigestNotifier(group, self.request)
-                tdn.notify()
+                pass
+#                tdn = DynamicTopicsDigestNotifier(group, self.request)
+#                tdn.notify()
 
         log.info('All digests sent')
         self.status = '<p>All digests sent.</p>'
