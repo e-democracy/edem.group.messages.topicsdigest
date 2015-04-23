@@ -34,6 +34,14 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         retval = DigestQuery()
         return retval
 
+    @staticmethod
+    def markup_word(curr_word):
+        curr_word = escape_word(curr_word)
+        mu_word = markup_uri(None, curr_word, False, [])
+        if mu_word == curr_word:
+            mu_word = markup_www(None, curr_word, False, [])
+        return mu_word
+
     def __formatTopic__(self, topic):
         topic = super(DailyTopicsDigest, self).__formatTopic__(topic)
 
@@ -59,17 +67,10 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
         marked_up_clip = ''
         curr_word = ''
 
-        def markup_word(curr_word):
-            curr_word = escape_word(curr_word)
-            mu_word = markup_uri(None, curr_word, False, [])
-            if mu_word == curr_word:
-                mu_word = markup_www(None, curr_word, False, [])
-            return mu_word
-
         for char in topic['last_post_clip']:
             if char.isspace():
                 if curr_word:
-                    mu_word = markup_word(curr_word)
+                    mu_word = self.markup_word(curr_word)
                     curr_word = ''
                     marked_up_clip += mu_word
                 if char == '\n':
@@ -78,7 +79,7 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
             else:
                 curr_word += char
         if curr_word:
-            mu_word = markup_word(curr_word)
+            mu_word = self.markup_word(curr_word)
             marked_up_clip += mu_word
 
         topic['last_post_clip'] = marked_up_clip
