@@ -42,8 +42,8 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
             mu_word = markup_www(None, curr_word, False, [])
         return mu_word
 
-    def __formatTopic__(self, topic):
-        topic = super(DailyTopicsDigest, self).__formatTopic__(topic)
+    def format_topic(self, topic):
+        topic = super(DailyTopicsDigest, self).format_topic(topic)
 
         if len(topic['last_post_body']) > clip_length:
             topic['last_post_more_available'] = True
