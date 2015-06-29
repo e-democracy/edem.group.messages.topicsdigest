@@ -16,7 +16,7 @@ from __future__ import absolute_import, unicode_literals
 from gs.content.base import SitePage
 from gs.group.messages.topic.digest.daily.notifiermessages import (
     DailyMessage as GSDailyMessage)
-from gs.group.messages.topic.digest.weekly.notifiermessages import (
+from edem.group.messages.topic.digest.weekly.notifiermessages import (
     WeeklyMessage as GSWeeklyMessage)
 
 

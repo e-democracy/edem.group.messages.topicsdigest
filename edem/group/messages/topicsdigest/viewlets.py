@@ -5,7 +5,7 @@ from gs.group.messages.topic.digest.base import (
     HeaderFooterViewlet as HeaderFooterBase)
 from gs.group.messages.topic.digest.daily.viewlets import (
     DailyTopicsDigestViewlet)
-from gs.group.messages.topic.digest.weekly.viewlets  import (
+from edem.group.messages.topic.digest.weekly.viewlets  import (
     WeeklyTopicsDigestViewlet)
 from Products.GSGroupMember.groupMembersInfo import GSGroupMembersInfo
 from .topicsDigest import ReminderTopicsDigest
