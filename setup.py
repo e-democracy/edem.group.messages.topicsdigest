@@ -43,7 +43,7 @@ setup(
         'gs.group.base',
         'gs.group.messages.topic.digest.base',
         'gs.group.messages.topic.digest.daily',
-        'gs.group.messages.topic.digest.weekly',
+        'edem.group.messages.topic.digest.weekly',
         'gs.viewlet',
         'Products.GSContent',
         'Products.GSGroupMember',
