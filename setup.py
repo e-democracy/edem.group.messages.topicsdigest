@@ -41,6 +41,7 @@ setup(
         'zope.viewlet',
         'gs.database',
         'gs.group.base',
+        'gs.group.messages.text',
         'gs.group.messages.topic.digest.base',
         'gs.group.messages.topic.digest.daily',
         'edem.group.messages.topic.digest.weekly',
