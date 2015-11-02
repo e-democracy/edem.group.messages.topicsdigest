@@ -1,4 +1,4 @@
-version='2.0'
+version='2.0.1'
 release=False
 
 #-------------------------------------------------------------------------------------#
@@ -43,7 +43,7 @@ def get_version():
         dt = datetime.datetime.utcfromtimestamp(float(commitdate))
         datestring = dt.strftime('%Y%m%d%H%M%S')
 
-        version_string = "%s-%s-%s" % (version, datestring, commithash)
+        version_string = "%s-%s" % (version, datestring)
 
     except CommandError, IntegerError:
         version_string = parse_version_from_package()
