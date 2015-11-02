@@ -30,7 +30,7 @@ def parse_version_from_package():
             if line.find('Version: ') == 0:
                 version_string = line.strip().split('Version: ')[1].strip()
         if not version_string:
-            version_string = '%s-dev' % version
+            version_string = '%s.dev' % version
     else:
         version_string = version
     
@@ -43,7 +43,7 @@ def get_version():
         dt = datetime.datetime.utcfromtimestamp(float(commitdate))
         datestring = dt.strftime('%Y%m%d%H%M%S')
 
-        version_string = "%s-%s" % (version, datestring)
+        version_string = "%s.dev%s" % (version, datestring)
 
     except CommandError, IntegerError:
         version_string = parse_version_from_package()
