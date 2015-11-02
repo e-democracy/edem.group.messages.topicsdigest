@@ -1,5 +1,5 @@
 # coding=utf-8
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals, print_function
 from zope.cachedescriptors.property import Lazy
 from gs.group.messages.post.text.postbody import escape_word, markup_uri, markup_www
 from gs.group.messages.topic.digest.daily.topicsdigest import \
@@ -8,7 +8,7 @@ from edem.group.messages.topic.digest.weekly.topicsdigest import \
     WeeklyTopicsDigest as BaseWeeklyTopicsDigest
 from .queries import DigestQuery
 
-clip_length = 500
+CLIP_LENGTH = 500
 
 
 class DailyTopicsDigest(BaseDailyTopicsDigest):
@@ -45,9 +45,9 @@ class DailyTopicsDigest(BaseDailyTopicsDigest):
     def format_topic(self, topic):
         topic = super(DailyTopicsDigest, self).format_topic(topic)
 
-        if len(topic['last_post_body']) > clip_length:
+        if len(topic['last_post_body']) > CLIP_LENGTH:
             topic['last_post_more_available'] = True
-            topic['last_post_clip'] = topic['last_post_body'][:clip_length]
+            topic['last_post_clip'] = topic['last_post_body'][:CLIP_LENGTH]
 
             # Remove cutoff words
             if not topic['last_post_clip'][-1].isspace():
